@@ -1,0 +1,423 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Raleway:wght@100;200;300;400;500;600;700;800&display=swap');
+
+// variables
+@import './variables/colors';
+@import './variables/mixins';
+
+// theme styles files
+@import './xtras';
+@import './fonts';
+
+// custom css
+* {
+  font-family: 'Lato', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// .ant-layout {
+//   background-color: $bodyColor !important;
+// }
+
+.app-container {
+  position: relative;
+  overflow-x: hidden;
+}
+
+.ant-layout-content {
+  @include mobile {
+    margin-top: 70px;
+  }
+}
+
+// Typography Style
+.title1,
+.title2,
+.title3,
+.title4,
+.title5,
+.title6 {
+  margin: 0;
+  line-height: 1.2;
+  font-family: 'Raleway', sans-serif;
+}
+
+.title1 {
+  font-size: 3rem;
+}
+
+.title2 {
+  font-size: 1.75rem;
+}
+
+.title3 {
+  font-size: 1.5rem;
+
+  // On mobile
+  @include mobile {
+    font-size: 1.3rem;
+  }
+}
+
+.title4 {
+  font-size: 1.3rem;
+}
+
+.title5 {
+  font-size: 1rem;
+}
+
+.title6 {
+  font-size: 0.875rem;
+}
+
+.description {
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 29px;
+  color: $black;
+}
+
+// carousel foucs
+.outline-none {
+  &:focus {
+    outline: none;
+  }
+
+  .flickity-viewport {
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+// Container fluid
+.container-fluid {
+  padding: 0;
+}
+
+.lg-padding {
+  @include desktop-lg {
+    padding: 0 150px !important;
+  }
+}
+
+.ant-layout {
+  background-color: #fff;
+
+  @include mobile {
+    overflow-x: hidden;
+  }
+}
+
+// Divider section
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: $gray-e;
+  margin: 20px 0;
+}
+
+// checkbox Style
+.checkbox-inner-style {
+  .ant-checkbox-wrapper {
+    margin-bottom: 20px;
+    margin-left: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .ant-checkbox-inner {
+    width: 22px;
+    height: 22px;
+    background: $gray-light;
+    border-radius: 2px;
+    border: none;
+  }
+
+  .ant-checkbox-checked {
+    .ant-checkbox-inner {
+      background-color: $theme-primary;
+    }
+  }
+  .ant-checkbox {
+    position: relative;
+    top: 2px;
+    margin-right: 7px;
+  }
+}
+
+.ant-checkbox-inner {
+  &::after{
+    transform: rotate(45deg) scale(1) translate(-30%, -70%) !important;
+  }
+}
+
+// Radio Style
+.ant-radio-group {
+  .ant-radio-wrapper {
+    // margin-bottom: 20px;
+  }
+
+  .ant-radio-inner {
+    width: 22px;
+    height: 22px;
+    background: $gray-light;
+    border-radius: 50%;
+    border: none;
+    position: relative;
+    top: 4px;
+
+    &::after {
+      top: 5px;
+      left: 5px;
+      width: 12px;
+      height: 12px;
+    }
+  }
+}
+
+// error color style
+.text-error {
+  color: $theme-danger;
+  margin-left: 5px;
+}
+
+// dot setup
+.dot-setup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+
+  .dot-style {
+    width: 8px;
+    height: 8px;
+    display: block;
+    border-radius: 50%;
+    background: rgba($theme-primary, 0.2);
+    margin-right: 26px;
+
+    &.dot-active {
+      background: rgba($theme-primary, 1);
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+// Datepicker Style
+.date-picker {
+  margin-top: 20px;
+
+  .ant-picker {
+    width: 100%;
+    min-height: 45px;
+  }
+
+  .label {
+    margin-bottom: 10px;
+    color: $theme-dark;
+    font-size: 16px;
+  }
+}
+
+// disabled button style
+.ant-btn-primary {
+  &:disabled{
+    background-color: rgba($theme-primary, 0.4) !important;
+    color: $white !important;
+  }
+}
+
+// hamburguer animation
+.navbar-toggler {
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  position: relative;
+  z-index: 1;
+  border: none;
+  background: none;
+
+  .lines {
+    background-color: $theme-primary;
+    width: 100%;
+    height: 4px;
+    margin: 5px 0;
+    border-radius: 50px;
+    transition: all 450ms ease-in;
+    overflow: hidden;
+
+    &:last-child {
+      width: 19px;
+      margin-left: auto;
+    }
+  }
+
+  .close-hamburguer {
+    .lines {
+      cursor: pointer;
+      background-color: $theme-primary;
+    }
+    .line-top {
+      transform: translateY(250%) rotate(45deg);
+    }
+    .line-mid {
+      opacity: 0;
+    }
+    .line-bottom {
+      transform: translateY(-200%) rotate(135deg);
+      width: 100%;
+    }
+  }
+}
+
+// Social style User flow
+.social-lg-buttons {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+
+  a {
+    margin-bottom: 20px;
+    display: block;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  img {
+    @include mobile {
+      width: 100%;
+    }
+  }
+}
+
+// Color Right Section
+.color-section {
+  background-color: $theme-primary;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  overflow: hidden;
+  width: 100%;
+  right: 0;
+
+  @include mobile {
+    width: 100%;
+    position: relative;
+    min-height: 70vh;
+    display: none;
+  }
+
+  .description {
+    color: $white;
+  }
+
+  .img-box {
+    text-align: center;
+    color: $white;
+
+    .title2 {
+      margin: 0 0 10px;
+      font-size: 30px;
+    }
+
+    .img-style {
+      height: 380px;
+      position: relative;
+
+      @include mobile {
+        height: 250px;
+      }
+
+      @include desktop-lg {
+        height: 480px;
+        width: 380px;
+      }
+
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+
+    img {
+      width: 380px;
+    }
+  }
+
+  .circle1 {
+    border-radius: 50px;
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: 1px solid $white;
+    position: absolute;
+    top: 80px;
+    left: 30px;
+  }
+
+  .circle2 {
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    background: none;
+    border: 1px solid $white;
+    position: absolute;
+    top: -110px;
+    right: -110px;
+
+    @include mobile {
+      width: 150px;
+      height: 150px;
+      top: -80px;
+      right: -80px;
+    }
+  }
+
+  .circle3 {
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    background: none;
+    border: 1px solid $white;
+    position: absolute;
+    bottom: -150px;
+    left: -20px;
+
+    @include mobile {
+      width: 150px;
+      height: 150px;
+      bottom: -120px;
+      left: -20px;
+    }
+  }
+}
+.d-none {
+  display: none;
+}

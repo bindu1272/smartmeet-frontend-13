@@ -1,0 +1,113 @@
+// variables
+@import '../../styles/variables/colors';
+@import '../../styles/variables/mixins';
+
+// button primary
+.medical-history-style {
+  background-color: $white;
+
+  .title {
+    font-size: 18px;
+    font-weight: 500;
+    color: $theme-dark;
+  }
+
+  .title-sm {
+    font-size: 18px;
+    color: $gray-7;
+  }
+
+  .search-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .search-item {
+    flex-grow: 2;
+    margin-left: 40px;
+
+    :global(.ant-input-group) {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+
+    :global(.ant-input) {
+      height: 40px;
+      background: #f4f4f4;
+      border-radius: 5px;
+      padding-left: 40px;
+      border: none;
+    }
+
+    :global(.ant-input-group-addon) {
+      position: absolute;
+      top: 4px;
+      margin-left: 5px;
+      background: none;
+
+      .ant-btn {
+        background: none;
+        border: none;
+      }
+    }
+  }
+
+  .collapse-section {
+    .title-sm {
+      margin: 30px 0 24px;
+    }
+  }
+
+  :global(.ant-collapse-arrow) {
+    position: absolute;
+    right: 0;
+    margin-right: 10px;
+    top: 50%;
+    font-size: 18px;
+  }
+
+  :global(.ant-collapse-item) {
+    border: 1px solid #cecece;
+    border-radius: 6px;
+    margin-bottom: 24px;
+    overflow: hidden;
+  }
+
+  :global(.ant-collapse) {
+    border: none;
+  }
+
+  :global(.ant-collapse-header) {
+    background-color: $white;
+  }
+
+  :global(.ant-collapse-content) {
+    border: none;
+  }
+
+  :global(.ant-collapse-content) {
+    background: $white;
+  }
+
+  :global(.ant-collapse-content-box) {
+    background: #fcfcfc;
+    margin: 10px;
+  }
+}
+.member-filter {
+  text-align: end;
+  margin-top: 20px;
+  .ant-select {
+    width: 150px;
+    text-align: start;
+  }
+}
+.button_medicalHistory {
+  display: flex;
+  justify-content: end;
+}
+.button_loadMore {
+  display: flex;
+  justify-content: center;
+}

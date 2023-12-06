@@ -1,0 +1,103 @@
+// variables
+@import "../../../styles/variables/colors";
+@import "../../../styles/variables/mixins";
+
+// button primary
+.patients-trust-style {
+  padding: 100px 67px;
+
+  @include mobile {
+    padding: 50px 20px;
+  }
+
+  .title2 {
+    text-align: center;
+    font-weight: bold;
+    color: $black;
+  }
+
+  .description {
+    max-width: 40%;
+    margin: 10px auto 0;
+    text-align: center;
+  }
+
+  .counter-card {
+    margin: 60px auto;
+    background-color: $white;
+    box-shadow: 0 5px 32px rgba($black, 0.1);
+    max-width: 79vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+    padding: 50px;
+
+    @include mobile {
+      max-width: 100vw;
+      flex-direction: column;
+      padding: 0px;
+      background: none;
+      box-shadow: none;
+    }
+    .icon {
+      min-width: 50px;
+      min-height: 50px;
+      background-color: #34c981;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 30px;
+
+      @include mobile {
+        max-width: 100vw;
+        flex-direction: column;
+      }
+    }
+
+    .counter-item {
+      border-right: 2px solid #eeeff2;
+      width: 33.3%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 25px 0;
+
+      @include mobile {
+        width: 100%;
+        border: none;
+        justify-content: flex-start;
+        background-color: $white;
+        box-shadow: 0 5px 32px rgba($black, 0.1);
+        padding: 30px 20px 30px 50px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+      }
+
+      &:last-child {
+        border: none;
+      }
+    }
+
+    .title {
+      font-weight: bold;
+      font-size: 40px;
+      line-height: 30px;
+      color: $black;
+    }
+
+    .text {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+
+    .text-sm {
+      font-size: 20px;
+      line-height: 30px;
+      color: #4f5665;
+    }
+  }
+}

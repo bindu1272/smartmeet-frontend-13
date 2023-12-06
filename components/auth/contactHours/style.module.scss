@@ -1,0 +1,15 @@
+@import '../../../styles/variables/colors';
+
+.contact-hours {
+  margin-top: 30px;
+
+  .label {
+    margin-bottom: 10px;
+    color: $theme-dark;
+    font-size: 16px;
+  }
+  .small-label {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+}

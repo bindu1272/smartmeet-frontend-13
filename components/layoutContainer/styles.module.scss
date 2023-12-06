@@ -1,0 +1,28 @@
+// variables
+@import "../../styles/variables/colors";
+@import "../../styles/variables/mixins";
+
+.layout-container {
+
+  // :global(.ant-layout-header) {
+    .header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $white;
+    border: none;
+    box-shadow: 0 5px 32px rgba($black, 0.1);
+    height: 90px;
+    padding: 0 67px;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+
+    @include mobile {
+      padding: 0 27px;
+      height: 70px;
+      position: fixed;
+      width: 100%;
+    }
+  }
+}

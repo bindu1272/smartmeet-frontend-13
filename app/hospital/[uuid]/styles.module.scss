@@ -1,0 +1,75 @@
+// variables
+@import '../../../styles/variables/colors';
+@import '../../../styles/variables/mixins';
+
+.doctor-ads {
+  display: flex;
+}
+
+.doctors-appointment {
+  padding: 50px 80px;
+  background-color: $bodyColor;
+
+  @include mobile {
+    padding: 20px;
+    padding-bottom: 80px;
+  }
+
+  .tab-section {
+    background: $white;
+    border: 1px solid #ebeaed;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin-top: 40px;
+  }
+
+  :global(.ant-tabs-tabpane) {
+    padding: 30px;
+
+    @include mobile {
+      padding: 10px;
+    }
+  }
+
+  :global(.ant-tabs-nav-list) {
+    width: 100%;
+  }
+
+  :global(.ant-tabs-tab) {
+    width: 100%;
+    text-align: center;
+    padding: 14px 0;
+    font-size: 18px;
+    font-weight: 500;
+
+    @include mobile {
+      font-size: 15px;
+    }
+  }
+
+  :global(.ant-tabs-tab-btn) {
+    width: 100%;
+  }
+
+  :global(.ant-tabs-ink-bar) {
+    height: 3px !important;
+  }
+
+  .faq-style {
+    padding: 0;
+
+    .header-section {
+      display: none;
+    }
+  }
+
+  :global(.ant-modal-content) {
+    :global(.ant-modal-body) {
+      .ad-image {
+        width: 200px;
+        height: 200px;
+        margin-top: 12px;
+      }
+    }
+  }
+}

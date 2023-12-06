@@ -1,0 +1,33 @@
+// variables
+@import "../../../styles/variables/colors";
+@import "../../../styles/variables/mixins";
+
+.forgot-password-section {
+  .link-section {
+    border-top: 1px solid #cecece;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 16px;
+  }
+
+  .forgot-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+
+    .ant-checkbox-wrapper {
+      margin-bottom: 0;
+
+      .ant-checkbox {
+        top: 0;
+      }
+    }
+  }
+
+  .text-info {
+    font-weight: 500;
+    font-size: 16px;
+    margin-top: 10px;
+  }
+}

@@ -1,0 +1,133 @@
+// variables
+@import '../../../styles/variables/colors';
+@import '../../../styles/variables/mixins';
+
+// button primary
+.hero-section-style {
+  padding: 0px 0 0 67px;
+  margin-bottom: 55px;
+
+  @include mobile {
+    padding: 0px;
+  }
+
+  @include desktop-lg {
+    padding-left: 160px;
+  }
+
+  .content-section {
+    max-width: 70%;
+    padding-top: 70px;
+
+    @include desktop-lg {
+      max-width: 60%;
+    }
+
+    @include mobile {
+      max-width: 100%;
+      padding: 10px 20px;
+    }
+  }
+
+  .title1 {
+    font-weight: bold;
+    color: $black;
+    font-size: 50px;
+
+    @include desktop-lg {
+      font-size: 60px;
+    }
+  }
+
+  .description {
+    color: $theme-dark;
+    font-size: 22px;
+    line-height: 1.4;
+    font-weight: 500;
+    margin: 30px 0 70px;
+    max-width: 80%;
+
+    @include desktop-lg {
+      max-width: 80%;
+      font-size: 26px;
+    }
+
+    @include mobile {
+      max-width: 100%;
+      font-size: 18px;
+    }
+  }
+
+  .btn-section {
+    display: flex;
+    align-items: center;
+
+    .ant-btn {
+      min-width: 230px;
+      height: 52px;
+    }
+  }
+
+  .gutter-space {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include mobile {
+      flex-direction: column-reverse;
+    }
+  }
+
+  .right-image-section {
+    position: absolute;
+    top: 0;
+    min-height: 100vh;
+    width: 80%;
+    right: 0;
+
+    @include mobile {
+      min-height: 50vh;
+      width: 40%;
+    }
+
+    @include desktop-lg {
+      width: 100%;
+    }
+  }
+
+  .image-style {
+    position: relative;
+    z-index: 1;
+    padding-top: 160px;
+    transform: scale(1.2);
+
+    @include mobile {
+      transform: scale(1);
+      padding-top: 30px;
+      left: 30px;
+    }
+
+    @include desktop-lg {
+      padding-top: 180px;
+      transform: scale(1.1);
+    }
+
+    img {
+      width: 100%;
+      right: 70px;
+      position: relative;
+
+      @include mobile {
+        right: 0;
+        width: 80%;
+      }
+
+      @include desktop-lg {
+        right: 160px;
+      }
+    }
+  }
+  .banner-image {
+    border-radius: 80% 0px 80% 80%;
+  }
+}

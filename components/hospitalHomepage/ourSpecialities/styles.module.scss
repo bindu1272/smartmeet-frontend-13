@@ -1,0 +1,59 @@
+// variables
+@import "../../../styles/variables/colors";
+@import "../../../styles/variables/mixins";
+
+// button primary
+.our-specialities-style {
+  padding: 50px 0;
+  background-color: $white;
+
+  .title2 {
+    text-align: center;
+    font-weight: bold;
+    color: $black;
+    font-size: 36px;
+    margin-bottom: 80px;
+  }
+
+  .title3 {
+    color: $theme-dark;
+    font-weight: 600;
+  }
+
+  .description {
+    max-width: 70%;
+    margin: 10px auto 0;
+    text-align: center;
+    font-weight: 400;
+
+    @include desktop-lg {
+      max-width: 40%;
+    }
+  }
+
+  .service-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    @include mobile {
+      margin-bottom: 50px;
+    }
+
+    .icon-box {
+      width: 160px;
+      height: 160px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      background-color: #e8f9fe;
+      border-radius: 5px;
+    }
+
+    .dentist-style {
+      background-color: #ffeee2;
+    }
+  }
+}

@@ -1,0 +1,193 @@
+// variables
+@import '../../styles/variables/colors';
+@import '../../styles/variables/mixins';
+
+.my-appointment {
+  padding: 50px 60px;
+  background-color: $bodyColor;
+
+  .title3 {
+    font-weight: 600;
+    color: $theme-dark;
+    font-size: 20px;
+  }
+
+  .flex-layout {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .button-default {
+    margin-right: 10px;
+  }
+
+  :global(.ant-select-selector) {
+    min-height: 46px;
+  }
+
+  :global(.ant-select-selection-item) {
+    line-height: 46px !important;
+  }
+
+  .custom-select {
+    width: 150px;
+    margin-right: 10px;
+  }
+
+  .header-style {
+    align-items: center;
+  }
+}
+
+.sure-modal-style {
+  .sure-section {
+    text-align: center;
+
+    .button-section {
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 220px;
+      margin: 30px auto 0;
+
+      .button-outline {
+        width: 100px;
+
+        :global(.ant-btn) {
+          border: none;
+          color: $theme-dark;
+          opacity: 0.7;
+        }
+      }
+
+      .button-primary {
+        width: 100px;
+        margin-top: 0;
+      }
+    }
+
+    .title {
+      font-size: 20px;
+      color: $theme-dark;
+      font-weight: 600;
+    }
+  }
+
+  :global(.ant-modal-close) {
+    display: none;
+  }
+
+  .textarea-sec {
+    text-align: left;
+    margin-top: 30px;
+
+    .text-info {
+      font-size: 16px;
+    }
+  }
+}
+
+.write-modal-style {
+  :global(.ant-modal-content) {
+    background-color: #f7f7f7;
+  }
+
+  .rating-box-style {
+    justify-content: center;
+
+    span {
+      margin-right: 10px;
+
+      &:nth-child(5) {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .write-section {
+    text-align: center;
+    padding-top: 30px;
+
+    .button-section {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 220px;
+      margin: 30px auto 0;
+
+      .button-outline {
+        width: 100px;
+
+        :global(.ant-btn) {
+          border: none;
+          color: $theme-dark;
+          opacity: 0.7;
+          background: none;
+        }
+      }
+
+      .button-primary {
+        width: 100px;
+        margin-top: 0;
+      }
+    }
+
+    .title {
+      font-size: 20px;
+      color: $theme-dark;
+      font-weight: 400;
+      color: $gray-6;
+
+      span {
+        color: $theme-dark;
+        font-weight: 600;
+      }
+    }
+  }
+
+  :global(.ant-modal-close) {
+    display: none;
+  }
+
+  .textarea-sec {
+    text-align: left;
+    margin-top: 20px;
+
+    .text-info {
+      font-size: 16px;
+    }
+  }
+
+  .close-button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+  }
+}
+
+// appointment-drawer
+.appointment-drawer {
+  :global(.ant-drawer-content-wrapper) {
+    min-width: 50%;
+  }
+
+  :global(.ant-drawer-content) {
+    background: $white;
+  }
+
+  :global(.ant-drawer-title) {
+    font-weight: 600;
+    font-size: 18px;
+  }
+}
+
+.load-button {
+  display: flex;
+  justify-content: center;
+}

@@ -1,0 +1,112 @@
+// variables
+@import "../../styles/variables/colors";
+@import "../../styles/variables/mixins";
+
+// input-custom
+.footer-custom {
+  background-color: #585ea3;
+  min-height: 400px;
+  color: $white;
+  padding: 90px 57px 0;
+
+  @include desktop-lg {
+    padding: 90px 167px 0;
+  }
+
+  @include mobile {
+    padding: 50px 20px;
+  }
+
+  .description {
+    max-width: 60%;
+    opacity: 0.4;
+    color: $white;
+    font-size: 18px;
+    font-weight: 500;
+
+    @include mobile {
+      max-width: 100%;
+    }
+  }
+
+  .logo-image {
+    filter: contrast(0) brightness(100);
+    width: 180px;
+    margin-bottom: 20px;
+  }
+
+  .link-section {
+    display: flex;
+    flex-direction: column;
+
+    a {
+      margin-bottom: 20px;
+      color: $white;
+      font-size: 16px;
+    }
+  }
+
+  .heading {
+    font-size: 18px;
+    margin-bottom: 40px;
+
+    @include mobile {
+      margin-top: 30px;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+  }
+
+  .copyright {
+    border-top: 2px solid $white;
+    text-align: center;
+    padding: 40px 0;
+    opacity: 0.4;
+    margin-top: 50px;
+    font-size: 16px;
+  }
+
+  .social-section {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+
+    a {
+      margin-right: 50px;
+      display: block;
+    }
+  }
+
+  :global(.ant-input) {
+    border: 2.66667px solid #ebeaed;
+    height: 35px;
+
+    @include mobile {
+      width: 100%;
+    }
+  }
+
+  :global(.ant-btn) {
+    background-color: #34c981;
+    border-color: #34c981;
+    line-height: 40px;
+    min-width: 150px;
+    height: 50px;
+    font-size: 18px;
+    font-weight: 600;
+
+    @include mobile {
+      min-width: auto;
+    }
+  }
+
+  .search-box {
+    max-width: 90%;
+    position: relative;
+    z-index: 1;
+
+    @include mobile {
+      max-width: 100%;
+    }
+  }
+}

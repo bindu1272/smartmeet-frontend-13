@@ -1,0 +1,29 @@
+// variables
+@import '../../styles/variables/colors';
+@import '../../styles/variables/mixins';
+
+.homepage-main {
+  overflow: hidden;
+
+  .faq-style {
+    padding-bottom: 0;
+
+    .header-section {
+      @include mobile {
+        padding-bottom: 50px;
+      }
+    }
+  }
+
+  .faq-section {
+    padding: 0 150px;
+
+    @include mobile {
+      padding: 0;
+    }
+  }
+}
+
+.specs-icon {
+  fill: red;
+}

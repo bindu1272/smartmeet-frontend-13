@@ -1,0 +1,48 @@
+// variables
+@import "../../../styles/variables/colors";
+@import "../../../styles/variables/mixins";
+
+.singup-section {
+
+
+  .link-section {
+    border-top: 1px solid #CECECE;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 16px;
+    margin-top: 30px;
+  }
+  
+  .text-info {
+    font-weight: 500;
+    font-size: 16px;
+    margin-top: 10px;
+  }
+}
+
+// or-divider
+.or-divider {
+  margin-top: 30px;
+
+  &::after {
+    position: absolute;
+    top: 13px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    content: '';
+    background: #CECECE;
+    z-index: -1;
+  }
+
+  .divider-style {
+    font-size: 16px;
+    color: rgba($theme-dark, 0.3);
+    position: relative;
+    z-index: 1;
+    background: $white;
+    display: table;
+    margin: 0 auto;
+    padding: 0 10px;
+  }
+}

@@ -1,0 +1,98 @@
+// variables
+@import '../../../styles/variables/colors';
+@import '../../../styles/variables/mixins';
+
+// button primary
+.content-component {
+  .list-section {
+    margin-bottom: 30px;
+    padding-right: 50px;
+  }
+
+  .title {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  ul {
+    padding-left: 20px;
+
+    li {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+  }
+
+  .card {
+    background-color: $white;
+    border: 1px solid #cecece;
+    border-radius: 6px;
+    padding: 20px;
+  }
+
+  .attachment {
+    font-weight: 500;
+    font-size: 17px;
+  }
+
+  .upload-section {
+    .ant-upload-select-picture {
+      position: absolute;
+      top: -50px;
+      right: 0;
+    }
+
+    .ant-upload-list {
+      margin-top: 0px;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .upload-action {
+      position: relative;
+    }
+
+    .ant-upload-list-item {
+      width: 80px;
+      height: 80px;
+      margin-right: 10px;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .ant-upload-list-item-thumbnail {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .ant-upload-list-item-card-actions {
+      position: absolute;
+      bottom: 0;
+      top: auto;
+    }
+
+    .ant-upload-list-item-name {
+      display: none;
+    }
+
+    .title-info {
+      font-size: 14px;
+    }
+  }
+
+  .button-primary {
+    max-width: 170px;
+  }
+  .ant-image {
+    margin-right: 20px;
+  }
+}

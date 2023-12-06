@@ -1,0 +1,165 @@
+// variables
+@import "../../../styles/variables/colors";
+@import "../../../styles/variables/mixins";
+
+.register-section {
+  //label of every field
+  .label {
+    margin-bottom: 10px;
+    color: $theme-dark;
+    font-size: 16px;
+  }
+
+  
+
+  // input-multiple
+  .input-multiple {
+    margin-top: 20px;
+    :global(.ant-input) {
+      height: 40px;
+    }
+    .PhoneInputInput {
+      padding: 10px;
+      width: 100%;
+      border-radius: 6px;
+    }
+    .PhoneInputCountryIcon {
+      width: 40px;
+      height: 30px;
+    }
+    .PhoneInputCountrySelectArrow {
+      width: 8px;
+      height: 8px;
+      font-weight: 600;
+    }
+
+    .hospital-url {
+      border-radius: 6px 6px;
+    }
+    .static-url {
+      border-radius: 6px 0px 0px 6px;
+      text-align: center;
+    }
+  }
+
+  // select-custom
+  .select-custom {
+    margin-top: 20px;
+    :global(.ant-select) {
+      width: 100%;
+      :global(.ant-select-selector) {
+        min-height: 40px;
+        align-items: center;
+      }
+    }
+
+    :global(.ant-select-multiple .ant-select-selection-item) {
+      background: rgba($theme-primary, 0.1);
+    }
+  }
+
+  //input-number-custom
+  .input-number-custom {
+    margin-top: 20px;
+
+    :global(.ant-input-number) {
+      width: 100%;
+    }
+
+    :global(.ant-input-number .ant-input-number-input) {
+      height: 40px;
+    }
+
+    .label {
+      margin-bottom: 10px;
+      color: $theme-dark;
+      font-size: 16px;
+    }
+  }
+
+  //textArea-custom
+  .textArea-custom {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  //sponsorship
+  .sponsorship {
+    display: flex;
+    justify-content: space-between;
+
+    align-items: flex-start;
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+    @include mobile {
+      justify-content: flex-start;
+      align-items: flex-start;
+      flex-direction: column;
+    }
+
+    .flex-inner {
+      display: flex;
+      justify-content: space-between;
+      flex-grow: 1;
+      margin-left: 110px;
+
+      @include mobile {
+        margin-left: 0px;
+        flex-grow: 0;
+        margin-top: 20px;
+      }
+
+      :global(.ant-checkbox-wrapper) {
+        margin-bottom: 0;
+      }
+    }
+
+    .label {
+      color: $theme-dark;
+      font-size: 16px;
+    }
+    :global(.ant-checkbox-inner) {
+      border-radius: 2px;
+    }
+    :global(.ant-checkbox-wrapper) {
+      font-size: 16px;
+    }
+  }
+
+  .open-hours {
+    .small-label {
+      font-size: 12px;
+      margin-top: 20px;
+
+      .label {
+        margin-bottom: 10px;
+      }
+    }
+
+    .info-circle {
+      width: 18px;
+      position: relative;
+      top: -2px;
+      margin-left: 5px;
+    }
+  }
+
+  .hospital-address {
+    margin-bottom: 20px;
+
+    input {
+      height: 40px;
+      width: 100%;
+      border-radius: 6px;
+      border: 1px solid #d9d9d9;
+      padding: 4px 11px;
+      font-size: 14px;
+    }
+    input:focus {
+      outline: none !important;
+      border-color: #532eb3;
+      box-shadow: 0 0 3px #532eb3;
+    }
+  }
+}

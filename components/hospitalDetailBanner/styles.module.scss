@@ -1,0 +1,138 @@
+// variables
+@import "../../styles/variables/colors";
+@import "../../styles/variables/mixins";
+
+// input-custom
+.hospital-detail-banner {
+  background: $white;
+  border: 1px solid #ebeaed;
+  box-sizing: border-box;
+  border-radius: 5px;
+  padding: 40px;
+
+  @include mobile {
+    padding: 20px;
+  }
+
+  .title2 {
+    display: flex;
+    font-size: 28px;
+    font-weight: 600;
+
+    img {
+      margin-left: 20px;
+      width: 18px;
+    }
+  }
+
+  .address-text {
+    font-size: 18px;
+    color: #726e7c;
+    font-weight: 600;
+  }
+
+  .timing-text {
+    font-size: 18px;
+    color: #726e7c;
+    margin-bottom: 10px;
+
+    span {
+      color: $theme-dark;
+      margin-right: 5px;
+    }
+  }
+
+  .text-info {
+    font-size: 16px;
+    color: #726e7c;
+    margin-bottom: 10px;
+
+    img {
+      margin-right: 10px;
+    }
+
+    span {
+      color: $theme-dark;
+      margin-right: 5px;
+    }
+  }
+
+  .treatment {
+    font-size: 18px;
+    color: #848484;
+    margin-top: 20px;
+  }
+
+  .available-resources {
+    color: $theme-primary;
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 10px;
+
+    .ar-item {
+      margin-bottom: 10px;
+    }
+
+    img {
+      width: 15px;
+      margin-right: 10px;
+    }
+  }
+
+  .banner-section {
+    position: relative;
+    height: 100%;
+
+    @include mobile {
+      margin-top: 50px;
+    }
+
+    .slider-item {
+      position: relative;
+      border-radius: 10px;
+      background-color: green;
+      min-height: 437px;
+      flex-grow: 1;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+
+      @include mobile {
+        min-height: 227px;
+      }
+    }
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .slick-arrow {
+    background-color: red;
+    z-index: 9;
+    width: 50px;
+    height: 50px;
+
+
+    &:hover {
+      background-color: red;
+    }
+  }
+
+  .ant-carousel .slick-next {
+    right: 0;
+    background: url('/static/images/icons/next.svg');
+    background-repeat: no-repeat;
+  }
+  .ant-carousel .slick-prev {
+    left: 0;
+    background: url('/static/images/icons/prev.svg');
+    background-repeat: no-repeat;
+    background-position: right;
+  }
+}

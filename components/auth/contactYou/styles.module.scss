@@ -1,0 +1,114 @@
+// variables
+@import '../../../styles/variables/colors';
+
+.contact-you-section {
+
+.subtext-style {
+  margin: 25px 0;
+  font-weight: 400;
+  font-size: 18px;
+  color: $theme-dark;
+}
+
+// input-multiple
+.input-multiple {
+  margin-top: 20px;
+  .ant-input {
+    height: 40px;
+  }
+  .label {
+    margin-bottom: 10px;
+    color: $theme-dark;
+    font-size: 16px;
+  }
+  .hospital-url {
+    border-radius: 0px 6px 6px 0px;
+  }
+  .static-url {
+    border-radius: 6px 0px 0px 6px;
+    text-align: center;
+  }
+}
+
+// select-custom
+.select-custom {
+  margin-top: 20px;
+  .ant-select .ant-select-selector {
+    height: 40px;
+    align-items: center;
+  }
+  .label {
+    margin-bottom: 10px;
+    color: $theme-dark;
+    font-size: 16px;
+  }
+  .ant-select-multiple .ant-select-selection-item {
+    background: rgba($theme-primary, 0.1);
+  }
+}
+
+//input-number-custom
+.input-number-custom {
+  margin-top: 20px;
+
+  .ant-input-number {
+    width: 100%;
+  }
+
+  .ant-input-number .ant-input-number-input {
+    height: 40px;
+  }
+  .label {
+    margin-bottom: 10px;
+    color: $theme-dark;
+    font-size: 16px;
+  }
+}
+
+//textArea-custom
+.textArea-custom {
+  margin-top: 20px;
+  .label {
+    margin-bottom: 10px;
+    color: $theme-dark;
+    font-size: 16px;
+  }
+}
+
+//sponsorship
+.sponsorship {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+
+  .label {
+    margin-bottom: 10px;
+    color: $theme-dark;
+    font-size: 16px;
+  }
+  .ant-checkbox-inner {
+    border-radius: 2px;
+  }
+  .ant-checkbox-wrapper {
+    font-size: 16px;
+  }
+}
+
+.open-hours {
+  margin-top: 20px;
+  .label {
+    margin-bottom: 10px;
+    color: $theme-dark;
+    font-size: 16px;
+  }
+}
+
+.info-circle {
+  width: 18px;
+  position: relative;
+  top: -2px;
+  margin-left: 5px;
+}
+
+}

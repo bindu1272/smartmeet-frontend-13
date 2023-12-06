@@ -1,0 +1,50 @@
+{
+  "name": "smartmeet-frontend-nextjs13",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3002",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@ant-design/cssinjs": "^1.18.0",
+    "@types/node": "20.6.2",
+    "@types/react": "18.2.22",
+    "@types/react-dom": "18.2.7",
+    "antd": "^5.12.1",
+    "autoprefixer": "10.4.15",
+    "axios": "^1.5.0",
+    "eslint": "8.49.0",
+    "eslint-config-next": "13.4.19",
+    "file-saver": "^2.0.5",
+    "google-map-react": "^2.2.1",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.4",
+    "next": "^13.5.6",
+    "next-auth": "^4.22.3",
+    "nprogress": "^0.2.0",
+    "otp-input-react": "^0.3.0",
+    "postcss": "8.4.30",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-google-places-autocomplete": "^4.0.1",
+    "react-otp-input": "^3.0.4",
+    "react-phone-number-input": "^3.3.6",
+    "react-places-autocomplete": "^7.3.0",
+    "react-rating-stars-component": "^2.2.0",
+    "react-redux": "^8.1.2",
+    "sass": "^1.67.0",
+    "tailwindcss": "3.3.3",
+    "typescript": "5.2.2",
+    "validatorjs": "^3.22.1"
+  },
+  "devDependencies": {
+    "@types/file-saver": "^2.0.5",
+    "@types/lodash": "^4.14.199",
+    "@types/nprogress": "^0.2.1",
+    "@types/react-places-autocomplete": "^7.2.10",
+    "@types/validatorjs": "^3.15.1"
+  }
+}

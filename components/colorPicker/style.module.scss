@@ -1,0 +1,18 @@
+@import '../../styles/variables/colors';
+
+.result {
+  border-radius: 4px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $theme-info;
+  background-color: $theme-background;
+  cursor: pointer;
+}
+
+.color-picker {
+  position: absolute;
+  visibility: hidden;
+}

@@ -1,0 +1,85 @@
+// variables
+@import "../../../styles/variables/colors";
+@import "../../../styles/variables/mixins";
+
+// button primary
+.smartmeet-style {
+  padding: 100px 67px;
+  min-height: 450px;
+  background-color: $theme-info;
+
+  @include mobile {
+    padding: 50px 20px;
+  }
+
+  .title2 {
+    text-align: center;
+    font-weight: bold;
+    color: $white;
+
+    @include mobile {
+      font-size: 25px;
+    }
+  }
+
+  .description {
+    max-width: 40%;
+    margin: 10px auto 0;
+    text-align: center;
+  }
+
+  .card-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 50px;
+
+    @include desktop-lg {
+      padding: 0px 150px;
+    }
+
+    @include mobile {
+      flex-wrap: wrap;
+    }
+
+    .card-title {
+      line-height: 1.4;
+    }
+
+    .icon-title-card {
+      text-align: center;
+      font-size: 18px;
+      line-height: 29px;
+      color: $white;
+      width: 20%;
+      margin-right: 10px;
+
+      @include mobile {
+        width: 40%;
+        margin-bottom: 35px;
+      }
+
+      .icon-image {
+        max-width: 65px;
+        margin-bottom: 40px;
+
+        @include mobile {
+          margin-bottom: 20px;
+        }
+
+        &.sm {
+          max-width: 40px;
+        }
+
+        &.lg {
+          max-width: 80px;
+          margin-bottom: 25px;
+
+          @include mobile {
+            margin-bottom: 0px;
+          }
+        }
+      }
+    }
+  }
+}

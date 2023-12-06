@@ -1,0 +1,64 @@
+// variables
+@import "../../../styles/variables/colors";
+@import "../../../styles/variables/mixins";
+
+.verify-email-section {
+  // otp-section
+  .otp-box {
+    margin-top: 30px;
+
+    input {
+      border: 1px solid $border-color;
+      height: 40px;
+      min-width: 40px;
+      border-radius: 10px;
+      margin-right: 20px;
+
+      &:focus {
+        outline: none;
+        box-shadow: none;
+      }
+    }
+  }
+
+  .modal-title {
+    margin-bottom: 0;
+    margin-top: 60px;
+  }
+
+
+  .otp-box {
+    margin-bottom: 40px;
+
+    input {
+      height: 55px;
+      min-width: 55px;
+    }
+  }
+
+  .link-section {
+
+    .description {
+      font-weight: 400;
+    }
+
+    a {
+      margin-left: 5px;
+    }
+  }
+
+  .info {
+    font-size: 18px;
+    max-width: 90%;
+
+    span {
+      color: $theme-primary;
+    }
+  }
+
+  .form-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}

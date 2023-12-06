@@ -1,0 +1,83 @@
+// variables
+@import "../../styles/variables/colors";
+@import "../../styles/variables/mixins";
+
+// button primary
+.app-bottom-style {
+  padding: 0px 150px 0;
+
+  @include mobile {
+    padding:50px 20px 0;
+  }
+
+  .title2 {
+    color: $black;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 1.5;
+
+    @include mobile {
+      font-size: 40px;
+
+      br {display: none;}
+    }
+  }
+
+  .row-section {
+    align-items: center;
+  }
+
+  .content-sec {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .logo-section {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 50px;
+
+    @include mobile {
+      margin-top: 30px;
+    }
+
+    .logo {
+      display: flex;
+      margin-right: 30px;
+      width: 180px;
+
+      @include mobile {
+        width: 150px;
+        margin-right: 10px;
+      }
+    }
+  }
+
+  .img-section {
+    position: relative;
+    z-index: 1;
+    top: 190px;
+
+    @include desktop-lg {
+      top: 200px;
+    }
+
+    @include mobile {
+      top: 80px;
+    }
+   
+    img {
+      width: 800px;
+
+      @include desktop-lg {
+        width: 100%;
+      }
+
+      @include mobile {
+        width: 100%;
+      }
+    }
+
+  }
+}

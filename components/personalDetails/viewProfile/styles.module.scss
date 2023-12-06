@@ -1,0 +1,181 @@
+// variables
+@import "../../../styles/variables/colors";
+@import "../../../styles/variables/mixins";
+
+.view-profile-style {
+  .form-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding: 0 30px;
+    margin-top: -80px;
+    margin-bottom: 50px;
+
+    @include mobile {
+      padding: 20px;
+    }
+  }
+  .ban
+  .heading {
+    font-size: 16px;
+    color: $gray-a7;
+  }
+
+  .info-text {
+    font-size: 18px;
+    color: $theme-dark;
+  }
+
+  .card {
+    background: #f8f6ff;
+    box-shadow: 0px 0px 32px rgba(46, 14, 129, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+
+    .card-body {
+      padding: 20px;
+    }
+
+    .card-title {
+      background-color: $white;
+      padding: 20px;
+      font-size: 20px;
+      color: $theme-dark;
+    }
+
+    .title {
+      color: #8898aa;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+  }
+
+  .item-col {
+    margin-bottom: 20px;
+  }
+
+  .label {
+    margin-bottom: 10px;
+    color: $theme-dark;
+    font-size: 16px;
+
+    span {
+      color: $theme-danger;
+      margin-left: 5px;
+    }
+  }
+
+  .button-section {
+    align-items: center;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .profile-image-card {
+    background: #ffffff;
+    box-shadow: 0px 0px 32px rgba(46, 14, 129, 0.1);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .image-card {
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      position: relative;
+      overflow: hidden;
+      margin-top: -60px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+      }
+    }
+
+    .content-sec {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      width: 50%;
+      margin: 30px 0;
+
+      @include mobile {
+        width: 80%;
+      }
+    }
+
+    .appointments {
+      font-size: 16px;
+      color: #8898AA;
+      font-weight: 600;
+    }
+
+    .name-sec {
+      color: $theme-dark;
+      font-size: 18px;
+      text-align: center;
+
+      span {
+        opacity: 0.7;
+      }
+
+      .address {
+        opacity: 0.7;
+      }
+    }
+
+    .number-section {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+
+      .item {
+        display: flex;
+        flex-direction: column;
+        color: $theme-dark;
+        text-align: center;
+        font-weight: 600;
+        font-size: 16px;
+
+        span {
+          opacity: 0.6;
+          font-weight: 400;
+        }
+      }
+    }
+
+    .personal-details {
+      width: 70%;
+      padding:0 0 20px;
+
+      .item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+
+        .text-sec {
+          width: 50%;
+          color: #8898AA;
+          font-size: 18px;
+        }
+
+        .info {
+          color: $theme-dark;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,650 @@
+// ######################################## //
+// ## XTRAS.SCSS ## //
+// ######################################## //
+
+// Flex Justify Content (prefixes)
+$flex-justify-prefixes: (
+  fs: flex-start,
+  fe: flex-end,
+  c: center,
+  sa: space-around,
+  sb: space-between,
+  ih: inherit,
+  in: initial,
+) !default;
+
+// Flex Align Items (prefixes)
+$flex-align-prefixes: (
+  fs: flex-start,
+  fe: flex-end,
+  c: center,
+  b: baseline,
+  s: stretch,
+  ih: inherit,
+  in: initial,
+) !default;
+
+// Flex Direction (prefixes)
+$flex-direction-prefixes: (
+  r: row,
+  rr: row-reverse,
+  c: column,
+  cr: column-reverse,
+  ih: inherit,
+  in: initial,
+) !default;
+
+// Flex Wrap (prefixes)
+$flex-wrap-prefixes: (
+  nw: no-wrap,
+  w: wrap,
+  wr: wrap-reverse,
+  ih: inherit,
+  in: initial,
+) !default;
+
+// Display Table (prefixes)
+$table-prefixes: (
+  tb: table,
+  tbin: inline-table,
+  tc: table-cell,
+  tcap: table-caption,
+  tr: table-row,
+  trgr: table-row-group,
+  tcol: table-column,
+  tcolgr: table-column-group,
+  thgr: table-header-group,
+  tfgr: table-footer-group,
+  ih: inherit,
+  in: initial,
+) !default;
+
+// Vertical Aligning (prefixes)
+$vertical-align-prefixes: (
+  bl: baseline,
+  b: bottom,
+  m: middle,
+  sub: sub,
+  sup: super,
+  tb: text-bottom,
+  tt: text-top,
+  t: top,
+  ih: inherit,
+  in: initial,
+) !default;
+
+// Spacing Values (array)
+$space-values: (
+  0,
+  5,
+  10,
+  15,
+  20,
+  25,
+  30,
+  35,
+  40,
+  45,
+  50,
+  55,
+  60,
+  65,
+  70,
+  75,
+  80,
+  85,
+  90,
+  95,
+  100
+) !default;
+
+// Margin (prefixes)
+$margin-prefixes: (
+  m: margin,
+  mt: margin-top,
+  mr: margin-right,
+  mb: margin-bottom,
+  ml: margin-left,
+) !default;
+
+// Padding (prefixes)
+$padding-prefixes: (
+  p: padding,
+  pt: padding-top,
+  pr: padding-right,
+  pb: padding-bottom,
+  pl: padding-left,
+) !default;
+
+// Cursor (prefixes)
+$cursor-prefixes: (
+  alias: alias,
+  allscroll: all-scroll,
+  auto: auto,
+  cell: cell,
+  colresize: col-resize,
+  contextmenu: context-menu,
+  copy: copy,
+  crosshair: crosshair,
+  default: default,
+  eresize: e-resize,
+  ewresize: ew-resize,
+  help: help,
+  inherit: inherit,
+  initial: initial,
+  move: move,
+  nresize: n-resize,
+  neresize: ne-resize,
+  neswresize: nesw-resize,
+  nodrop: no-drop,
+  none: none,
+  notallowed: not-allowed,
+  nsresize: ns-resize,
+  nwresize: nw-resize,
+  nwseresize: nwse-resize,
+  pointer: pointer,
+  progress: progress,
+  rowresize: row-resize,
+  sresize: s-resize,
+  seresize: se-resize,
+  swresize: sw-resize,
+  text: text,
+  vtext: vertical-text,
+  wresize: w-resize,
+  wait: wait,
+) !default;
+
+// Social Colors
+$color-facebook: #3b5999;
+$color-messenger: #0084ff;
+$color-twitter: #55acee;
+$color-linkedin: #0077b5;
+$color-skype: #00aff0;
+$color-dropbox: #007ee5;
+$color-wordpress: #21759b;
+$color-vimeo: #1ab7ea;
+$color-slideshare: #0077b5;
+$color-vk: #4c75a3;
+$color-tumblr: #34465d;
+$color-yahoo: #410093;
+$color-gplus: #db4437;
+$color-pinterest: #bd081c;
+$color-youtube: #cd201f;
+$color-stumbleupon: #eb4924;
+$color-reddit: #ff5700;
+$color-quora: #b92b27;
+$color-yelp: #af0606;
+$color-weibo: #df2029;
+$color-producthunt: #da552f;
+$color-hackernews: #ff6600;
+$color-soundcloud: #ff3300;
+$color-blogger: #f57d00;
+$color-whatsapp: #4dc247;
+$color-wechat: #09b83e;
+$color-line: #00c300;
+$color-vine: #00b489;
+$color-slack: #3aaf85;
+$color-instagram: #c21473;
+$color-dribbble: #ea4c89;
+$color-flickr: #ff0084;
+$color-foursquare: #f94877;
+$color-behance: #1769ff;
+$color-github: #24292e;
+$color-medium: #12100e;
+$color-spotify: #00e461;
+$color-snapchat: #fffc00;
+
+// Social Colors (prefixes)
+$social-colors-prefixes: (
+  facebook: $color-facebook,
+  messenger: $color-messenger,
+  twitter: $color-twitter,
+  linkedin: $color-linkedin,
+  skype: $color-skype,
+  dropbox: $color-dropbox,
+  wordpress: $color-wordpress,
+  vimeo: $color-vimeo,
+  slideshare: $color-slideshare,
+  vk: $color-vk,
+  tumblr: $color-tumblr,
+  yahoo: $color-yahoo,
+  gplus: $color-gplus,
+  pinterest: $color-pinterest,
+  youtube: $color-youtube,
+  stumbleupon: $color-stumbleupon,
+  reddit: $color-reddit,
+  quora: $color-quora,
+  yelp: $color-yelp,
+  weibo: $color-weibo,
+  producthunt: $color-producthunt,
+  hackernews: $color-hackernews,
+  soundcloud: $color-soundcloud,
+  blogger: $color-blogger,
+  whatsapp: $color-whatsapp,
+  wechat: $color-wechat,
+  line: $color-line,
+  medium: $color-medium,
+  vine: $color-vine,
+  slack: $color-slack,
+  instagram: $color-instagram,
+  dribbble: $color-dribbble,
+  flickr: $color-flickr,
+  foursquare: $color-foursquare,
+  behance: $color-behance,
+  github: $color-github,
+  spotify: $color-spotify,
+  snapchat: $color-snapchat,
+) !default;
+
+// ********************************* //
+// ************ MARGINS ************ //
+// ********************************* //
+@each $prop-short, $prop-long in $margin-prefixes {
+  @each $value in $space-values {
+    .#{$prop-short}--#{$value} {
+      #{$prop-long}: #{$value}px;
+    }
+  }
+}
+// ********************************* //
+// ********* MARGINS (IMP) ********* //
+// ********************************* //
+@each $prop-short, $prop-long in $margin-prefixes {
+  @each $value in $space-values {
+    .#{$prop-short}--#{$value}-imp {
+      #{$prop-long}: #{$value}px !important;
+    }
+  }
+}
+
+// ********************************* //
+// ************ PADDINGS *********** //
+// ********************************* //
+@each $prop-short, $prop-long in $padding-prefixes {
+  @each $value in $space-values {
+    .#{$prop-short}--#{$value} {
+      #{$prop-long}: #{$value}px;
+    }
+  }
+}
+// ********************************* //
+// ******** PADDINGS (IMP) ********* //
+// ********************************* //
+@each $prop-short, $prop-long in $padding-prefixes {
+  @each $value in $space-values {
+    .#{$prop-short}--#{$value}-imp {
+      #{$prop-long}: #{$value}px !important;
+    }
+  }
+}
+
+// ********************************* //
+// ************ FLEXBOX ************ //
+// ********************************* //
+
+// Flex
+.fx {
+  display: flex;
+}
+// Flex (Important)
+.fx-imp {
+  display: flex !important;
+}
+
+// Inline Flex
+.infx {
+  display: inline-flex;
+}
+// Inline-Flex (Important)
+.infx-imp {
+  display: inline-flex !important;
+}
+
+// Flex Wrap
+@each $prop-short, $prop-long in $flex-wrap-prefixes {
+  .fx--w-#{$prop-short} {
+    flex-wrap: #{$prop-long};
+  }
+}
+// Flex Wrap (Important)
+@each $prop-short, $prop-long in $flex-wrap-prefixes {
+  .fx--w-#{$prop-short}-imp {
+    flex-wrap: #{$prop-long} !important;
+  }
+}
+
+// Flex Direction
+@each $prop-short, $prop-long in $flex-direction-prefixes {
+  .fx--d-#{$prop-short} {
+    flex-direction: #{$prop-long};
+  }
+}
+// Flex Direction (Important)
+@each $prop-short, $prop-long in $flex-direction-prefixes {
+  .fx--d-#{$prop-short}-imp {
+    flex-direction: #{$prop-long} !important;
+  }
+}
+
+// Justify Content
+@each $prop-short, $prop-long in $flex-justify-prefixes {
+  .fx--jc-#{$prop-short} {
+    justify-content: #{$prop-long};
+  }
+}
+// Justify Content (Important)
+@each $prop-short, $prop-long in $flex-justify-prefixes {
+  .fx--jc-#{$prop-short}-imp {
+    justify-content: #{$prop-long} !important;
+  }
+}
+
+// Align Items
+@each $prop-short, $prop-long in $flex-align-prefixes {
+  .fx--ai-#{$prop-short} {
+    align-items: #{$prop-long};
+  }
+}
+// Align Items (Important)
+@each $prop-short, $prop-long in $flex-align-prefixes {
+  .fx--ai-#{$prop-short}-imp {
+    align-items: #{$prop-long} !important;
+  }
+}
+
+// ********************************* //
+// ******** TABLE (DISPLAY) ******** //
+// ********************************* //
+@each $prop-short, $prop-long in $table-prefixes {
+  .table--#{$prop-short} {
+    display: #{$prop-long};
+
+    // Full Width
+    &.fw {
+      width: 100%;
+    }
+  }
+}
+// ********************************* //
+// ****** TABLE (DISPLAY) IMP ****** //
+// ********************************* //
+@each $prop-short, $prop-long in $table-prefixes {
+  .table--#{$prop-short}-imp {
+    display: #{$prop-long} !important;
+
+    // Full Width
+    &.fw {
+      width: 100%;
+    }
+  }
+}
+
+// ********************************* //
+// ******* TABLE (ALIGNMENT) ******* //
+// ********************************* //
+/* Table */
+.sec--table {
+  display: table;
+
+  // Full Width
+  &.fw {
+    width: 100%;
+  }
+}
+// ********************************* //
+// ***** TABLE (ALIGNMENT) IMP ***** //
+// ********************************* //
+/* Table */
+.sec--table-imp {
+  display: table !important;
+
+  // Full Width
+  &.fw {
+    width: 100%;
+  }
+}
+
+/* Table Row */
+.sec--table-row {
+  display: table-row;
+}
+/* Table Row (IMP) */
+.sec--table-row-imp {
+  display: table-row !important;
+}
+
+/* Table Cell */
+.sec--table-cell {
+  display: table-cell;
+}
+/* Table Cell (IMP) */
+.sec--table-cell-imp {
+  display: table-cell;
+}
+
+// ********************************* //
+// ******** VERTICAL ALIGN ********* //
+// ********************************* //
+@each $prop-short, $prop-long in $vertical-align-prefixes {
+  .valign--#{$prop-short} {
+    vertical-align: #{$prop-long};
+  }
+}
+// ********************************* //
+// ***** VERTICAL ALIGN (IMP) ****** //
+// ********************************* //
+@each $prop-short, $prop-long in $vertical-align-prefixes {
+  .valign--#{$prop-short}-imp {
+    vertical-align: #{$prop-long} !important;
+  }
+}
+
+// ********************************* //
+// ************* WIDTH ************* //
+// ********************************* //
+// Full Width
+.width--full {
+  width: 100%;
+}
+// Full Width (IMP)
+.width--full-imp {
+  width: 100% !important;
+}
+
+// Half Width
+.width--half {
+  width: 50%;
+}
+// Half Width (IMP)
+.width--half-imp {
+  width: 50% !important;
+}
+
+// Auto Width
+.width--auto {
+  width: auto;
+}
+// Auto Width (IMP)
+.width--auto-imp {
+  width: auto !important;
+}
+
+// ********************************* //
+// ********** WIDTH (vw) *********** //
+// ********************************* //
+// Full Width
+.width--full-vw {
+  width: 100vw;
+}
+// Full Width (IMP)
+.width--full-vw-imp {
+  width: 100vw !important;
+}
+
+// Half Width
+.width--half-vw {
+  width: 50vw;
+}
+// Half Width (IMP)
+.width--half-vw-imp {
+  width: 50vw !important;
+}
+
+// ********************************* //
+// ************* HEIGHT ************ //
+// ********************************* //
+// Full Height
+.height--full {
+  height: 100%;
+}
+// Full Height (IMP)
+.height--full-imp {
+  height: 100% !important;
+}
+
+// Half Height
+.height--half {
+  height: 50%;
+}
+// Half Height (IMP)
+.height--half-imp {
+  height: 50% !important;
+}
+
+// Auto Height
+.height--auto {
+  height: auto;
+}
+// Auto Height (IMP)
+.height--auto {
+  height: auto !important;
+}
+
+// ********************************* //
+// ********** HEIGHT (vh) ********** //
+// ********************************* //
+// Full Height
+.height--full-vh {
+  height: 100vh;
+}
+// Full Height (IMP)
+.height--full-vh-imp {
+  height: 100vh !important;
+}
+
+// Half Height
+.height--half-vh {
+  height: 50vh;
+}
+// Half Height (IMP)
+.height--half-vh-imp {
+  height: 50vh !important;
+}
+
+// ********************************* //
+// ********* COLORS (SOCIAL) ******* //
+// ********************************* //
+@each $prop-short, $prop-long in $social-colors-prefixes {
+  .color--social-#{$prop-short} {
+    color: #{$prop-long};
+  }
+}
+// ********************************* //
+// ******* COLORS (SOCIAL) IMP ***** //
+// ********************************* //
+@each $prop-short, $prop-long in $social-colors-prefixes {
+  .color--social-#{$prop-short}-imp {
+    color: #{$prop-long} !important;
+  }
+}
+
+// ********************************* //
+// ***** BACKGROUNDS (SOCIAL) ****** //
+// ********************************* //
+@each $prop-short, $prop-long in $social-colors-prefixes {
+  .bgcolor--social-#{$prop-short} {
+    background-color: #{$prop-long};
+  }
+}
+// ********************************* //
+// **** BACKGROUNDS (SOCIAL) IMP *** //
+// ********************************* //
+@each $prop-short, $prop-long in $social-colors-prefixes {
+  .bgcolor--social-#{$prop-short}-imp {
+    background-color: #{$prop-long} !important;
+  }
+}
+
+// ********************************* //
+// ******* BUTTONS (SOCIAL) ******** //
+// ********************************* //
+@each $prop-short, $prop-long in $social-colors-prefixes {
+  .btn--social-#{$prop-short} {
+    background-color: #{$prop-long};
+    color: #ffffff;
+    transition: all 0.1s linear;
+
+    &.hover:hover {
+      opacity: 0.8;
+      color: #ffffff;
+      transition: all 0.1s linear;
+    }
+
+    &.focus:focus,
+    &.active:active {
+      background-color: #{$prop-long};
+      color: #ffffff;
+    }
+  }
+}
+// ********************************* //
+// ***** BUTTONS (SOCIAL) IMP ****** //
+// ********************************* //
+@each $prop-short, $prop-long in $social-colors-prefixes {
+  .btn--social-#{$prop-short}-imp {
+    background-color: #{$prop-long} !important;
+    color: #ffffff !important;
+    transition: all 0.1s linear;
+
+    &.hover:hover {
+      opacity: 0.8;
+      color: #ffffff;
+      transition: all 0.1s linear;
+    }
+
+    &.focus:focus,
+    &.active:active {
+      background-color: #{$prop-long} !important;
+      color: #ffffff;
+    }
+  }
+}
+
+// ********************************* //
+// ************ CURSORS ************ //
+// ********************************* //
+@each $prop-short, $prop-long in $cursor-prefixes {
+  .cursor--#{$prop-short} {
+    cursor: #{$prop-long};
+  }
+}
+// ********************************* //
+// ********* CURSORS (IMP) ********* //
+// ********************************* //
+@each $prop-short, $prop-long in $cursor-prefixes {
+  .cursor--#{$prop-short}-imp {
+    cursor: #{$prop-long} !important;
+  }
+}
+
+// ********************************* //
+// ********** TEXT STYLES ********** //
+// ********************************* //
+
+.text-underline {
+  text-decoration: underline;
+}
+
+.border-none {
+  border: none !important;
+}

@@ -1,0 +1,67 @@
+// variables
+@import "../../styles/variables/colors";
+
+// input-custom
+.checkbox-style {
+  position: relative;
+
+  &:last-child {
+    .divider {
+      display: none;
+    }
+  }
+
+  .head-sec {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  // Search box section
+  .searchbox {
+    :global(.ant-input) {
+      display: none;
+    }
+
+    .ant-btn-primary {
+      padding: 0;
+      background: none;
+      border: none;
+      box-shadow: none;
+    }
+
+    .anticon-search {
+      filter: brightness(0) contrast(100);
+    }
+
+    .ant-btn-primary {
+      border-radius: 6px !important;
+      transform: scale(1.2);
+    }
+
+    :global(.ant-input-group-addon) {
+      background: none;
+    }
+  }
+
+  .title {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 32px;
+    color: $theme-dark;
+  }
+
+  .divider {
+    width: 100%;
+    height: 1px;
+    background-color: #e4e4e4;
+  }
+
+  .checkbox-inner-style,
+  .ant-radio-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+}

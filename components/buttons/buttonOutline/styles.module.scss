@@ -1,0 +1,44 @@
+// variables
+@import "../../../styles/variables/colors";
+@import "../../../styles/variables/mixins";
+
+// button primary
+.button-outline {
+  :global(.ant-btn) {
+    width: 100%;
+    height: 46px;
+    border-color: $theme-primary;
+    color: $theme-primary;
+    font-weight: 600;
+    font-size: 16px;
+    background: none;
+  }
+
+  &.white {
+    :global(.ant-btn) {
+      border-color: $white;
+      color: white;
+    }
+  }
+
+  &.green {
+    :global(.ant-btn) {
+      border-color: #27ae60;
+      color: #27ae60;
+    }
+  }
+
+  &.red {
+    :global(.ant-btn) {
+      border-color: #ff0033;
+      color: #ff0033;
+    }
+  }
+
+  &.blue {
+    :global(.ant-btn) {
+      border-color: #0059ba;
+      color: #0059ba;
+    }
+  }
+}

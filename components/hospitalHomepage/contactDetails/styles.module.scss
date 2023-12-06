@@ -1,0 +1,91 @@
+// variables
+@import "../../../styles/variables/colors";
+@import "../../../styles/variables/mixins";
+
+// button primary
+.contact-details-style {
+  padding: 50px 67px 100px;
+
+  @include desktop-lg {
+    padding: 100px 200px;
+  }
+
+  @include mobile {
+    padding: 100px 20px 0;
+    margin-bottom: 50px;
+  }
+
+  .title2 {
+    text-align: center;
+    font-weight: bold;
+    color: $black;
+  }
+
+  .description {
+    max-width: 100%;
+    margin: 10px auto 0;
+  }
+
+
+  .button-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .button-primary {
+      margin-right: 20px;
+    }
+  }
+
+  .detail-box {
+    display: flex;
+    flex-direction: column;
+
+    .title {
+      font-size: 20px;
+      color: $theme-dark;
+      font-weight: 600;
+    }
+
+    .item {
+      margin-bottom: 10px;
+    }
+
+    .subtext {
+      font-size: 18px;
+    }
+
+    .description {
+      font-size: 18px;
+      color: $theme-dark;
+      font-weight: 500;
+      max-width: 90%;
+      margin-left: 0;
+    }
+
+    .info {
+      display: flex;
+      align-items: center;
+
+      .title {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  .border-first {border-bottom: 1px solid $gray-e; margin-bottom: 30px; padding-bottom: 30px;}
+
+  // adddress
+  .address-section {
+    background-color: #f3fffd;
+    padding: 40px;
+
+    @include mobile {
+      padding: 30px;
+    }
+  }
+
+  .map-section {
+    margin: 60px 0 80px;
+  }
+}

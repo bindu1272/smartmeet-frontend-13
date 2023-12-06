@@ -1,0 +1,171 @@
+// variables
+@import "../../../styles/variables/colors";
+@import "../../../styles/variables/mixins";
+
+// button primary
+.how-works-style {
+  padding: 50px 67px;
+
+  @include mobile {
+    padding:50px 20px;
+  }
+
+  .title2 {
+    text-align: center;
+    font-weight: bold;
+    color: $black;
+  }
+
+  .card-section {
+    margin-top: 57px;
+
+    .card-custom {
+      background: $white;
+      box-shadow: 2px 4px 8px rgba(83, 46, 179, 0.1);
+      border-radius: 15px;
+      padding: 30px;
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+
+      @include mobile {
+        padding: 30px;
+        box-shadow: 0px 5px 32px rgba($black, 0.1);
+      }
+    }
+
+    .col-card {
+
+      @include mobile {
+        margin-bottom: 20px;
+      }
+    }
+
+    .number {
+      font-weight: 600;
+      font-size: 24px;
+      color: $theme-primary;
+
+      @include desktop-lg {
+        font-size: 24px;
+      }
+    }
+
+    .title {
+      font-size: 16px;
+      letter-spacing: 0.04em;
+      color: $theme-dark;
+      margin: 18px 0;
+
+      @include desktop-lg {
+        font-size: 22px;
+      }
+
+      @include mobile {
+        font-size: 16px;
+      }
+    }
+
+    .icon-image {
+      width: 50px;
+
+      &.lg {
+        width: 60px;
+      }
+    }
+
+    .gutter-space {
+      margin: 0 -50px;
+
+      @include mobile {
+        margin: 0 -10px;
+      }
+
+      @include desktop-lg {
+        margin: 0 0px;
+      }
+
+      :global(.ant-col) {
+        padding: 0 50px;
+
+        @include mobile {
+          padding: 0 10px;
+        }
+
+        @include desktop-lg {
+          padding: 0 80px;
+        }
+      }
+    }
+
+    // ant-col
+    :global(.ant-col) {
+      &:nth-child(1),
+      &:nth-child(3) {
+        position: relative;
+
+        &:before {
+          background-image: url("/static/images/icons/dotted-shape1.svg");
+          background-repeat: no-repeat;
+          background-position: right;
+          position: absolute;
+          top: 70px;
+          left: 92px;
+          content: "";
+          width: 100%;
+          height: 100%;
+          z-index: 1;
+          transform: scale(0.8);
+          
+
+          @include desktop-lg {
+            top: 70px;
+            left: 48px;
+            transform: scale(1.2);
+          }
+
+          @include mobile {
+            top: 90px;
+            left: -30px;
+            transform: scale(0.4) rotate(50deg);
+
+            display: none;
+          }
+        }
+      }
+
+      &:nth-child(2) {
+        position: relative;
+
+        &:before {
+          background-image: url("/static/images/icons/dotted-shape2.svg");
+          background-repeat: no-repeat;
+          background-position: right;
+          position: absolute;
+          top: -20px;
+          left: 92px;
+          content: "";
+          width: 100%;
+          height: 100%;
+          z-index: 1;
+          transform: scale(0.8);
+
+          @include desktop-lg {
+            top: -50px;
+            left: 48px;
+            transform: scale(1.2);
+          }
+
+
+          @include mobile {
+            top: 80px;
+            left: -30px;
+            transform: scale(0.4) rotate(70deg);
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

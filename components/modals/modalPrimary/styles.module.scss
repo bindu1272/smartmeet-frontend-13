@@ -1,0 +1,86 @@
+// variables
+@import '../../../styles/variables/colors';
+@import '../../../styles/variables/mixins';
+
+.modal-primary-style {
+  :global(.ant-modal-header) {
+    border: none;
+    border-radius: 0;
+  }
+
+  :global(.ant-modal-content) {
+    padding: 30px 50px;
+    border-radius: 5px;
+
+    @include mobile {
+      padding: 30px 20px;
+    }
+  }
+
+  .modal-title {
+    font-weight: 600;
+    font-size: 35px;
+    letter-spacing: 0.01em;
+    color: $theme-dark;
+    margin-bottom: 40px;
+  }
+
+  :global(.ant-modal-close) {
+    position: absolute;
+    top: 30px;
+    transform: scale(1.4);
+    right: 60px;
+
+    @include mobile {
+      right: 0px;
+      top: 0px;
+    }
+  }
+
+  &.ant-modal {
+    top: 35px;
+  }
+
+  .select-area {
+    display: flex;
+    // margin-bottom: 30px;
+
+    :global(.ant-checkbox-wrapper) {
+      min-width: 150px;
+
+      @include mobile {
+        min-width: 120px;
+      }
+    }
+  }
+
+  .text-info {
+    margin-bottom: 10px;
+    font-size: 17px;
+    color: $theme-dark;
+
+    span {
+      color: $theme-danger;
+    }
+  }
+
+  .input-custom {
+    margin-bottom: 20px;
+  }
+
+  .button-primary {
+    margin-top: 30px;
+  }
+
+  :global(.ant-modal-body) {
+    padding: 0;
+
+    @include mobile {
+      padding: 20px 0;
+    }
+  }
+  :global(.ant-modal-mask) {
+    background: rgba($black, 0.6);
+    backdrop-filter: blur(4px);
+  }
+}

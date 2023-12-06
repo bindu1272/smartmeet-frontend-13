@@ -1,0 +1,31 @@
+// variables
+@import "../../../styles/variables/colors";
+@import "../../../styles/variables/mixins";
+
+.otp-section {
+  // otp-section
+  .otp-box {
+    margin-top: 30px;
+
+    input {
+      border: 1px solid $border-color;
+      height: 50px;
+      min-width: 50px;
+      border-radius: 10px;
+      margin-right: 20px;
+
+      &:focus {
+        outline: none;
+        box-shadow: none;
+      }
+    }
+  }
+
+  .description {
+    color: $theme-dark;
+  }
+
+  .other-link-section {
+    margin-top: 40px;
+  }
+}

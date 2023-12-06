@@ -1,0 +1,152 @@
+// variables
+@import '../../styles/variables/colors';
+@import '../../styles/variables/mixins';
+
+// Login Container
+
+.patient-registration-container {
+  height: 100vh;
+  overflow-x: hidden;
+
+  .head-section {
+    margin-bottom: 30px;
+  }
+
+  .form-section {
+    padding: 90px 120px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+
+    @include mobile {
+      padding: 20px;
+    }
+
+    @include desktop-lg {
+      padding: 90px 270px 50px;
+    }
+  }
+  // button-section
+  .button-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 120px;
+
+    @include desktop-lg {
+      padding: 0px 220px;
+    }
+
+    .button-primary {
+      width: 100%;
+    }
+  }
+
+  .title3 {
+    font-weight: 600;
+    font-size: 30px;
+
+    @include desktop-lg {
+      font-size: 33px;
+    }
+  }
+
+  .input-custom {
+    margin-top: 20px;
+  }
+
+  // Logo section
+  .logo {
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    img {
+      width: 160px;
+    }
+
+    a {
+      color: $theme-dark;
+      font-size: 18px;
+    }
+  }
+
+  .description {
+    font-size: 18px;
+    font-weight: bold;
+
+    &.sm {
+      font-size: 16px;
+      font-weight: normal;
+    }
+
+    a {
+      text-decoration: underline;
+      color: $theme-primary;
+    }
+  }
+
+  .button-primary {
+    .icon-style {
+      margin-left: 10px;
+    }
+  }
+
+  .link-section {
+    margin-top: 30px;
+  }
+
+  .info {
+    margin-top: 10px;
+  }
+
+  .form-container {
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    overflow: auto;
+  }
+
+  .ant-select-selection-item {
+    height: 35px;
+    padding: 5px 8px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+
+    .ant-select-selection-item-remove {
+      background-color: rgba($theme-primary, 1);
+      color: $white;
+      border-radius: 50%;
+      width: 17px;
+      height: 17px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 7px;
+    }
+  }
+  .ant-select-selector {
+    height: 45px !important;
+  }
+
+  // Link style
+
+  .link-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .link {
+    color: $theme-primary;
+    font-weight: 500;
+    margin-left: 5px;
+    cursor: pointer;
+  }
+}
+

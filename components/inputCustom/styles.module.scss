@@ -1,0 +1,43 @@
+// variables
+@import "../../styles/variables/colors";
+
+// input-custom
+.input-custom {
+  :global(.ant-input) {
+    height: 45px;
+  }
+  .label {
+    margin-bottom: 10px;
+    color: $theme-dark;
+    font-size: 16px;
+
+    span {
+      color: $theme-danger;
+      margin-left: 5px;
+    }
+  }
+
+  :global(.ant-input-affix-wrapper) {
+    padding: 0px 11px;
+  }
+
+  :global(.ant-input-group) {
+    display: flex;
+
+    :global(.ant-select-single) {
+      margin-right: 15px;
+    }
+
+    :global(.ant-input) {
+      border-radius: 6px !important;
+    }
+
+    :global(.ant-select-selector) {
+      min-width: 60px;
+      height: 45px;
+      border-radius: 6px !important;
+      display: flex;
+      align-items: center;
+    }
+  }
+}

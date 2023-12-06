@@ -1,0 +1,36 @@
+// variables
+@import "../../styles/variables/colors";
+@import "../../styles/variables/mixins";
+
+.layout-hospital-container {
+  .ant-layout-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: transparent;
+    border: none;
+    height: 90px;
+    padding: 0 67px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+
+    @include mobile {
+      padding: 0 20px;
+      height: 70px;
+    }
+  }
+
+  .header {
+    transition: all 0.5s ease-in-out;
+  }
+
+  .headerFix {
+    transition: all 0.5s ease-in-out;
+  }
+  .headerFix2 {
+    background-color: $white !important;
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.08);
+  }
+}

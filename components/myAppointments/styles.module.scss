@@ -1,0 +1,145 @@
+// variables
+@import '../../styles/variables/colors';
+@import '../../styles/variables/mixins';
+
+.my-appointment-component {
+  .card-style {
+    background: $white;
+    box-shadow: 4px 8px 20px rgba(83, 46, 179, 0.16);
+    border-radius: 5px;
+    padding: 40px 20px 20px 20px;
+    margin-bottom: 40px;
+  }
+
+  .circle-image {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    position: relative;
+    overflow: hidden;
+    margin-right: 20px;
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .name {
+    font-size: 22px;
+    font-weight: 600;
+    color: $theme-dark;
+  }
+  .address {
+    font-size: 14px;
+    font-weight: 600;
+    color: #726e7c;
+    margin: 5px 0;
+  }
+  .hospital {
+    font-size: 16px;
+    font-weight: 600;
+    color: $theme-primary;
+    margin: 5px 0;
+  }
+  .experience {
+    font-size: 14px;
+    font-weight: 600;
+    color: $theme-dark;
+  }
+
+  .user-info {
+    display: flex;
+    align-items: center;
+  }
+
+  .buttons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .date-action {
+    display: flex;
+    align-items: center;
+  }
+  .button-dashed {
+    border: 1px dashed $gray-d;
+    border-radius: 4px;
+    margin-right: 10px;
+    padding: 15px 20px;
+  }
+
+  .button-outline {
+    margin-left: 10px;
+  }
+
+  .flex-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+
+  .between {
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  .rating-info {
+    font-size: 16px;
+    color: #a7a7a7;
+    text-align: right;
+  }
+
+  .self-info {
+    font-size: 16px;
+    color: #a7a7a7;
+    text-align: right;
+  }
+
+  .rating-box-style {
+    margin: 0;
+
+    span {
+      margin-right: 10px;
+
+      &:nth-child(5) {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .date-time {
+    color: #a7a7a7;
+    font-weight: 600;
+    margin-left: 5px;
+  }
+
+  .title {
+    font-size: 20px;
+    font-weight: 500;
+    color: $theme-dark;
+    margin-bottom: 20px;
+  }
+
+  .divider {
+    margin: 40px 0;
+  }
+  :global(.ant-ribbon) {
+    font-size: 18px !important;
+    height: 32px;
+    padding: 6px;
+    width: 110px;
+    text-align: center;
+  }
+  .flex-layout {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+}
+

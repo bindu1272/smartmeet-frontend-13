@@ -1,0 +1,395 @@
+// variables
+@import '../../../../../styles/variables/colors';
+// @import '../../../../styles/variables/mixins';
+@import '../../../../../styles/variables/mixins';
+
+
+
+
+.doctors-info {
+  .single-daytime {
+    align-items: baseline;
+
+    // .day {
+    //   // width: 40px;
+      
+    // }
+  }
+
+  padding: 50px 80px;
+  height: 100%;
+  background-color: $bodyColor;
+
+  @include mobile {
+    padding: 20px;
+  }
+
+  .tab-section {
+    background: $white;
+    border: 1px solid #ebeaed;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin-top: 40px;
+    margin-bottom: 50px;
+  }
+
+  :global(.ant-tabs-tabpane) {
+    padding: 30px;
+
+    @include mobile {
+      padding: 20px;
+    }
+
+    .lg-padding {
+      padding: 0 !important;
+      margin-top: 0px;
+    }
+  }
+
+  :global(.ant-tabs-nav-list) {
+    width: 100%;
+  }
+
+  :global(.ant-tabs-tab) {
+    width: 100%;
+    text-align: center;
+    padding: 14px 0;
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  :global(.ant-tabs-tab-btn) {
+    width: 100%;
+  }
+
+  :global(.ant-tabs-ink-bar) {
+    height: 3px !important;
+  }
+
+  .faq-style {
+    padding: 0 150px;
+
+    @include mobile {
+      padding: 0;
+    }
+
+    .faq-section {
+      margin-top: 20px;
+
+      @include mobile {
+        margin-top: 0px;
+      }
+    }
+
+    .header-section {
+      display: none;
+    }
+
+    :global(.ant-collapse-header) {
+      background-color: #f3f3f3;
+      font-size: 18px;
+
+      @include mobile {
+        font-size: 16px;
+      }
+    }
+
+    :global(.ant-collapse-content p) {
+      font-size: 20px;
+
+      @include mobile {
+        font-size: 16px;
+      }
+    }
+
+    :global(.ant-collapse-content-box) {
+      border: 1px solid #f3f3f3;
+      border-radius: 0px 0px 5px 5px;
+      margin-top: -3px;
+    }
+  }
+
+  .book-section {
+    @include mobile {
+      margin-top: 50px;
+    }
+  }
+
+  .doctor-detail-section {
+    background-color: $white;
+    border-radius: 6px;
+    border: 1px solid $border-color-light;
+    min-height: 100%;
+
+    :global(.ant-card) {
+      border-radius: 0;
+      background: none;
+      border: none;
+    }
+
+    .card-style {
+      margin-bottom: 30px;
+      cursor: pointer;
+      flex-direction: column;
+    }
+
+    .card-body {
+      display: flex;
+
+      @include mobile {
+        flex-direction: column;
+      }
+    }
+
+    :global(.ant-card-body) {
+      flex-direction: column;
+    }
+
+    .card-section {
+      .img-card {
+        width: 130px;
+        height: 130px;
+        border-radius: 50%;
+        position: relative;
+        overflow: hidden;
+        margin-right: 20px;
+
+        @include mobile {
+          width: 100%;
+          height: 200px;
+          border-radius: 3%;
+          margin-bottom: 30px;
+        }
+
+        img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          width: 100%;
+          height: 100%;
+          margin: 0 auto;
+          object-fit: cover;
+          object-position: top;
+        }
+      }
+
+      :global(.ant-card-body) {
+        display: flex;
+        margin-top: auto;
+        margin-bottom: 0;
+      }
+
+      .description {
+        font-size: 15px;
+        font-weight: 500;
+        color: #726e7c;
+      }
+
+      .title4 {
+        font-size: 18px;
+        font-weight: 600;
+      }
+
+      .tag-style {
+        position: absolute;
+        top: 0;
+        right: 20px;
+        display: flex;
+        flex-direction: column;
+        z-index: 1;
+
+        &:before {
+          background: url('/static/images/icons/tag.svg');
+          background-size: contain;
+          background-repeat: no-repeat;
+          position: absolute;
+          top: 14px;
+          right: 1px;
+          width: 100%;
+          height: 100%;
+          content: '';
+          transform: scale(1.9);
+        }
+
+        img {
+          width: 12px;
+          margin-top: 5px;
+        }
+      }
+
+      .hospital-name {
+        color: $theme-primary;
+      }
+      .action-section {
+        flex-grow: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: space-between;
+      }
+
+      .availability-style {
+        display: flex;
+        align-items: center;
+
+        img {
+          margin-right: 10px;
+        }
+
+        .title {
+          font-weight: 600;
+          color: #4caf50;
+          font-size: 16px;
+          margin-top: 0;
+          margin-bottom: 0;
+
+          &.text-warning {
+            color: #ff8000;
+          }
+        }
+      }
+
+      .logo-style {
+        width: 20px;
+      }
+
+      .certified {
+        font-size: 16px;
+        font-weight: 500;
+
+        img {
+          margin-right: 20px;
+        }
+      }
+    }
+  }
+
+  .featured-style {
+    border-top: 1px solid #ebeaed;
+    padding-top: 30px;
+    margin-top: 30px;
+
+    .title4 {
+      margin-bottom: 20px;
+      opacity: 0.7;
+    }
+
+    .featured-list {
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    img {
+      width: 18px;
+      margin-right: 10px;
+    }
+  }
+
+  .doctor-information-section {
+    .title3 {
+      color: $theme-dark;
+      margin-bottom: 10px;
+      font-weight: 600;
+      font-size: 22px;
+    }
+
+    .description {
+      font-weight: 500;
+      opacity: 0.7;
+    }
+
+    .address-section {
+      margin: 30px 0;
+
+      .address-text {
+        font-size: 18px;
+        color: #726e7c;
+        font-weight: bold;
+        margin: 15px 0;
+      }
+
+      :global(.ant-btn) {
+        max-width: 170px;
+      }
+    }
+  }
+
+  .availability-section {
+    .day {
+      font-weight: 500;
+      display: block;
+      font-size: 17px;
+      color: #726e7c;
+      border-radius: 50%;
+      text-align: center;
+      padding: 1px;
+      background-color: $theme-info;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      cursor: pointer;
+    }
+
+    span {
+      display: block;
+    }
+  }
+
+  .card-slot {
+    padding-bottom: 30px;
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #d2d2d2;
+      padding: 20px;
+    }
+
+    .card-tab-sec {
+      padding: 0 20px;
+
+      :global(.ant-tabs-tabpane) {
+        padding: 0;
+      }
+    }
+
+    :global(.ant-card-body) {
+      padding: 0;
+    }
+
+    .title {
+      font-size: 17px;
+      color: $theme-dark;
+      font-weight: 600;
+    }
+
+    .price {
+      font-size: 18px;
+      color: $theme-dark;
+      font-weight: 600;
+    }
+  }
+
+  // text-block-style
+  .text-block-style {
+    display: flex;
+    flex-direction: column;
+    color: rgba($theme-dark, 0.4);
+
+    span {
+      font-size: 18px;
+      color: $theme-dark;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+  }
+
+  // .text-green {
+  //   color: red;
+  // }
+}

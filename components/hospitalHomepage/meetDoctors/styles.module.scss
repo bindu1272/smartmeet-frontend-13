@@ -1,0 +1,199 @@
+// variables
+@import '../../../styles/variables/colors';
+@import '../../../styles/variables/mixins';
+
+// button primary
+.meet-doctors-style {
+  padding: 100px 0;
+  background-color: $white;
+
+  @include mobile {
+    padding: 0px 0 50px;
+  }
+
+  .title2 {
+    text-align: center;
+    font-weight: 600;
+    color: $theme-dark;
+    font-size: 30px;
+    margin-top: 18px;
+  }
+
+  .title3 {
+    color: $theme-dark;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 5px;
+    font-size: 18px;
+  }
+
+  .description {
+    max-width: 80%;
+    margin: 5px auto 0;
+    text-align: center;
+    font-weight: 500;
+    font-size: 18px;
+    opacity: 0.7;
+  }
+
+  // Slider Style
+  .slider-section {
+    padding: 0 80px;
+    margin-top: 50px;
+
+    @include desktop-lg {
+      padding: 0 200px;
+    }
+
+    @include mobile {
+      padding: 0 40px;
+    }
+
+    .doctro-image {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff9f4;
+      border: 1px solid #ffcea5;
+      border-radius: 25px;
+      position: relative;
+      height: 480px;
+
+      @include mobile {
+        height: 400px;
+      }
+
+      @include desktop-lg {
+        height: 580px;
+      }
+
+      img {
+        position: absolute;
+        top: 1px;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: top;
+        z-index: 2;
+      }
+    }
+    .slick-list {
+      margin: 0 -20px;
+    }
+    .slick-slide > div {
+      padding: 0 20px;
+    }
+
+    .slick-arrow {
+      z-index: 9;
+      width: 50px;
+      height: 50px;
+      top: 40%;
+    }
+    .slick-track {
+      padding: 50px 0;
+    }
+
+    .slick-slide {
+      transition: all 0.5s ease-in-out;
+      position: relative;
+      overflow: hidden;
+
+      &::after {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        content: '';
+        z-index: 1;
+      }
+
+      &:nth-child(2n + 1) {
+        &::after {
+          background: url('/static/images/shapes/a3.svg');
+          background-repeat: no-repeat;
+          background-position: center top;
+          top: 0px;
+          left: -50px;
+
+          @include desktop-lg {
+            top: 0px;
+            left: -80px;
+          }
+        }
+      }
+
+      &:nth-child(2n + 0) {
+        &::after {
+          top: 100px;
+          left: -60px;
+          background: url('/static/images/shapes/a2.svg');
+          background-repeat: no-repeat;
+          background-position: right top;
+        }
+      }
+
+      &:nth-child(3n + 0) {
+        &::after {
+          top: 100px;
+          left: 21px;
+          background: url('/static/images/shapes/a1.svg');
+          background-repeat: no-repeat;
+        }
+      }
+    }
+
+    .slick-center {
+      transform: scale(1.05);
+      margin-top: -10px;
+      transition: all 0.5s ease-in-out;
+    }
+
+    .slick-next {
+      right: -70px;
+      background: url('/static/images/icons/next.svg') !important;
+      background-repeat: no-repeat !important;
+      filter: brightness(0) contrast(100);
+
+      @include mobile {
+        right: -15px;
+      }
+    }
+    .slick-prev {
+      left: -70px;
+      background: url('/static/images/icons/prev.svg') !important;
+      background-repeat: no-repeat;
+      background-position: right;
+      background-repeat: no-repeat !important;
+      filter: brightness(0) contrast(100);
+
+      @include mobile {
+        left: 0;
+      }
+    }
+  }
+
+  .button-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include mobile {
+      flex-direction: column;
+      padding: 0 30px;
+
+      .button-primary {
+        margin-bottom: 20px;
+        width: 100%;
+      }
+    }
+
+    .button-primary {
+      margin-right: 20px;
+
+      @include mobile {
+        margin-right: 0px;
+      }
+    }
+  }
+}
