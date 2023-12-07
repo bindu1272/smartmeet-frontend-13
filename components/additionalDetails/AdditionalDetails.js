@@ -53,7 +53,6 @@ function AdditionalDetails({
   setEmergencyContacts,
   setEditData,
 }) {
-  console.log("hello",editData);
   const {data : session} = useSession();
   const [loading,setLoading] = useState(false);
   const [emergencyChecked, setEmergencyChecked] = useState(false);
@@ -116,7 +115,6 @@ function AdditionalDetails({
   };
   
   function showPosition(position) {
-    console.log("position**", position, latLng,window);
     if (position?.coords?.latitude && window) {
       let lat = position?.coords?.latitude;
       let lng = position?.coords?.longitude;
@@ -124,7 +122,6 @@ function AdditionalDetails({
         lat = latLng?.lat;
         lng = latLng?.lng;
       }
-    console.log("position*1212*", position, lat,lng,window);
 
       geocodeByLatLng({
         lat: lat,

@@ -10,7 +10,7 @@ import { putTimeHelper } from "@/utilities/putTimeHelper";
 import { isValidPhoneNumber } from "react-phone-number-input";
 import HospitalRegistrationPage from "@/components/auth/hospital-register";
 
-export const REGISTRATION_STEPS = {
+const REGISTRATION_STEPS = {
   PERSONAL_DETAILS: 0,
   OTP: 1,
   ABOUT_HOSPITAL: 2,
@@ -126,7 +126,7 @@ export default function HospitalRegistration() {
   };
 
   const handleDashboard = () => {
-    window.location.replace("https://staging-admin.smartmeet.au/");
+    router.replace("https://staging-admin.smartmeet.au/");
   };
 
   const handleClick = (e: any) => {

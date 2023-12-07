@@ -1,16 +1,16 @@
 "use client";
 import { useState } from "react";
 import {  Form, Input, Button, notification } from "antd";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import styles from "./styles.module.scss";
 import { axiosInstance } from "@/remote/axios";
 import Image from "next/image";
 import React from "react";
 
 export default function RecoverPassword(props: any) {
-  const url =  new URL(window.location.href);
+  const searchParams = useSearchParams()
   const [loading, setLoading] = useState(false);
-  console.log("searchParams", url.searchParams.get("userid"));
+  console.log("searchParams", searchParams.get("userid"));
   const [value, setValue] = useState(1);
   const router = useRouter();
 
@@ -21,7 +21,7 @@ export default function RecoverPassword(props: any) {
     router.push("/recoverpassword");
   };
   const onFinish = async (values: any) => {
-    let data = { ...values, uuid: url.searchParams.get("userid") };
+    let data = { ...values, uuid: searchParams.get("userid") };
     setLoading(true);
     await axiosInstance
       .post("/change-patient-password", data)

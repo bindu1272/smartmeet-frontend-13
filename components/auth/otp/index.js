@@ -1,13 +1,11 @@
-"use client";
-import { notification,message } from 'antd';
+"use client"
+import { notification, message } from 'antd';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
-import { useState } from 'react';
-import OtpInput from 'otp-input-react'
+import OtpInput from 'react-otp-input'
 import Image from "next/image";
 // 'react-otp-input';
 
-import { REGISTRATION_STEPS } from "../../../app/hospital-registration/page"
 // '@/app/hospital-registration/page';
 import { axiosInstance } from '../../../remote/axios';
 import ButtonPrimary from '../../buttons/buttonPrimary';
@@ -16,23 +14,30 @@ import ButtonPrimary from '../../buttons/buttonPrimary';
 import styles from './styles.module.scss';
 import hospitalStyles from './hospitalstyles.module.scss';
 
-
-Otp.propTypes = {
-  active: PropTypes.bool,
-  clickHandler: PropTypes.func,
-  otp : PropTypes.any,
-  data : PropTypes.any,
-  errors: PropTypes.any,
-  onChange : PropTypes.any,
-  onClickBack : PropTypes.any,
-  completeData : PropTypes.any,
+const REGISTRATION_STEPS = {
+  PERSONAL_DETAILS: 0,
+  OTP: 1,
+  ABOUT_HOSPITAL: 2,
+  PERSONALISATION: 3,
+  CONTACT_HOURS: 4,
 };
 
+// Otp.propTypes = {
+//   active: PropTypes.bool,
+//   clickHandler: PropTypes.func,
+//   otp: PropTypes.any,
+//   data: PropTypes.any,
+//   errors: PropTypes.any,
+//   onChangeFormDatafn: PropTypes.any,
+//   onClickBack: PropTypes.any,
+//   completeData: PropTypes.any,
+// };
+
 export default function Otp(props) {
-  const { active, data, onChange, completeData, onClickBack } = props;
+  const { active, data, onChangeFormDatafn, completeData, onClickBack } = props;
 
   const onChangeOtp = (key, value) => {
-    onChange({ ...data, [key]: value });
+    onChangeFormDatafn({ ...data, [key]: value });
   };
 
   const handleResendCode = async () => {
@@ -54,7 +59,7 @@ export default function Otp(props) {
         <div>
           <div className={hospitalStyles["logo"]}>
             <Image src="../../static/images/logo/logo.svg" alt="" width={10}
-          height={10}/>
+              height={10} />
           </div>
           <h3 className={hospitalStyles["title3"]}>Please verify your email</h3>
           <div className={hospitalStyles["info"]}>
@@ -63,13 +68,11 @@ export default function Otp(props) {
           </div>
           <div className={styles["otp-box"]}>
             {/* <Form.Item validateStatus={!props.errors.otp ? "validating" : "error"} help={props.errors.otp}> */}
-            <OtpInput
+            {/* <OtpInput
               value={data?.otp}
               onChange={(value) => onChangeOtp('otp', value)}
-              // numInputs={4}
               inputCount={6}
-              // separator={<span>-</span>}
-            />
+            /> */}
             {/* </Form.Item> */}
           </div>
 

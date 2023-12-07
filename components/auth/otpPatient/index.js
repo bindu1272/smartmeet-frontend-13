@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import PropTypes from 'prop-types';
 import { useState } from 'react';
-import OtpInput from 'otp-input-react'
+import OtpInput from 'react-otp-input'
 
 import ButtonPrimary from '../../buttons/buttonPrimary';
 import { Form } from 'antd';
@@ -22,7 +22,7 @@ export default function OtpPatient(props) {
     console.log('Failed:', errorInfo);
   };
   return (
-    <div className={true ? otpStyles["otp-section"]: otpStyles["otp-section"] + " " + otpStyles['d-none']}>
+    <div className={true ? otpStyles["otp-section"] : otpStyles["otp-section"] + " " + otpStyles['d-none']}>
       <div className={HospitalRegistrationStyles["form-section"]}>
         <Form
           name="control-hooks"
@@ -33,7 +33,7 @@ export default function OtpPatient(props) {
           <div>
             <div className={HospitalRegistrationStyles["logo"]}>
               <Image src="../../static/images/logo/logo.svg" alt="" width={10}
-          height={10}/>
+                height={10} />
             </div>
             <h3 className="title3">Please verify your email</h3>
             <div className={HospitalRegistrationStyles["info"]}>
@@ -55,20 +55,20 @@ export default function OtpPatient(props) {
                   onChange={(value) => setOtp(value)}
                 /> */}
                 <OtpInput
-              value={otp}
-              onChange={(value) => setOtp(value)}
-              // numInputs={4}
-              inputCount={4}
-              // separator={<span>-</span>}
-            />
+                  value={otp}
+                  onChange={(value) => setOtp(value)}
+                  // numInputs={4}
+                  inputCount={4}
+                // separator={<span>-</span>}
+                />
               </div>
             </Form.Item>
 
             <div className={otpStyles["other-link-section"]}>
-              <div className={HospitalRegistrationStyles["description"]+" "+HospitalRegistrationStyles["sm"]}>
+              <div className={HospitalRegistrationStyles["description"] + " " + HospitalRegistrationStyles["sm"]}>
                 Didn’t recieve it? <a onClick={props.onResendOtp}>Resend code</a>
               </div>
-              <div className={HospitalRegistrationStyles["description"]+" "+HospitalRegistrationStyles["sm"]}>
+              <div className={HospitalRegistrationStyles["description"] + " " + HospitalRegistrationStyles["sm"]}>
                 Change email address? <a onClick={props.onClickBack}>Go back</a>
               </div>
             </div>

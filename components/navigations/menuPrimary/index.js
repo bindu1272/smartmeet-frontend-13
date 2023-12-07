@@ -66,7 +66,7 @@ export default function MenuPrimary(props) {
   const onClickLogin = (e) => {
     // e.preventDefault();
     // props.onLogin();
-    router.push('/login?callbackUrl='+ window.location.origin)
+    router.push('/login?callbackUrl='+ process.env.NEXT_PUBLIC_API_URL)
   };
 
   const onClickSignUp = () => {

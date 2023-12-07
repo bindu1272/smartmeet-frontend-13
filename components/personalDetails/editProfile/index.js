@@ -119,7 +119,6 @@ export default function EditProfile({ onClick, data, getProfileDetails }) {
       `/patients/users`,
       payload
     );
-    const url = new URL(window.location.href);
     router.push("/");
     getProfileDetails();
     onClick();

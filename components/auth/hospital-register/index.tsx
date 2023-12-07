@@ -54,7 +54,7 @@ export default function HospitalRegistrationPage({
             errors={errors[REGISTRATION_STEPS.OTP]}
             completeData={formData}
             onClickBack={onPressBack}
-            onChange={(data:any) => onChangeFormData(data, REGISTRATION_STEPS.OTP)}
+            onChangeFormDatafn={(data:any) => onChangeFormData(data, REGISTRATION_STEPS.OTP)}
             clickHandler={handleClick}
           /> 
 
