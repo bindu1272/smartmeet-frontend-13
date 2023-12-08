@@ -251,7 +251,7 @@ export default function FavoritesSection() {
           <Col xs={12} xl={18}>
             <div className={styles["d-flex"] + " " + styles["header-inner"]}>
               <div className={styles["icon"]}>
-                <Image src="../../../static/images/icons/favourite.svg" alt="" layout="fill" />
+                <Image src="../../../static/images/icons/favourite.svg" alt="" width="240" height="37" className="fav-image" />
               </div>
               <div className={styles["title2"]}>Favourites</div>
             </div>
