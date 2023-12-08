@@ -68,11 +68,12 @@ export default function Otp(props) {
           </div>
           <div className={styles["otp-box"]}>
             {/* <Form.Item validateStatus={!props.errors.otp ? "validating" : "error"} help={props.errors.otp}> */}
-            {/* <OtpInput
-              value={data?.otp}
+            <OtpInput
+              value={'123'}
               onChange={(value) => onChangeOtp('otp', value)}
-              inputCount={6}
-            /> */}
+              numInputs={6}
+              renderInput={(props) => <input {...props} />}
+            />
             {/* </Form.Item> */}
           </div>
 

@@ -14,6 +14,7 @@ import filterArr from "lodash/filter";
 import { getUrl } from "@/utilities/helpers";
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
 import Image from "next/image";
+import React from "react";
 
 const { Option } = Select;
 
@@ -104,15 +105,17 @@ export default function BookAppointmentPage({
   }
 
   useEffect(() => {
-    geocodeByPlaceId(get(selectedLocation, "place_id"))
-      .then((results) => {
-        setInputAddress({
-          label: get(results[0], "formatted_address"),
-          value: results[0],
-        });
-        console.log(results[0]);
-      })
-      .catch((error) => console.error(error));
+    if (get(selectedLocation, "place_id")) {
+      geocodeByPlaceId(get(selectedLocation, "place_id"))
+        .then((results) => {
+          setInputAddress({
+            label: get(results[0], "formatted_address"),
+            value: results[0],
+          });
+          console.log(results[0]);
+        })
+        .catch((error) => console.error(error));
+    }
   }, []);
 
   // const removeQueryParam = (removeKey: any) => {
@@ -401,7 +404,7 @@ export default function BookAppointmentPage({
         onClick={toggle}
       >
         <Image src="/../../static/images/icons/filter.png" alt="" width={10}
-              height={10}/>
+          height={10} />
       </button>
 
       <div
@@ -520,108 +523,108 @@ export default function BookAppointmentPage({
 
               {(map(selectedPractices, "id").includes("h") ||
                 selectedPractices?.length == 0) && (
-                <div className={styles["hospital-section"]}>
-                  <div className={styles["title2"]}>Hospitals</div>
+                  <div className={styles["hospital-section"]}>
+                    <div className={styles["title2"]}>Hospitals</div>
 
-                  {get(hospitalList, "filterHospitals").length > 0 ? (
-                    <>
-                      <Row className={styles["card-section"]} align="stretch">
-                        {(selectedPractices?.length == 0
-                          ? get(hospitalList, "filterHospitals").slice(0, 3)
-                          : get(hospitalList, "filterHospitals")
-                        ).map((hospital: any) => (
-                          <Col
-                            key={hospital.id}
-                            className={styles["hospital-card-style"]}
-                            span={8}
-                          >
-                            <div className={styles["tag-style"]}>
-                              <Image src="../../static/images/icons/star.svg" alt="" width={12}
-              height={11.4}/>
-                              <div className={styles["rating"]}>
-                                {hospital.rating}
+                    {get(hospitalList, "filterHospitals").length > 0 ? (
+                      <>
+                        <Row className={styles["card-section"]} align="stretch">
+                          {(selectedPractices?.length == 0
+                            ? get(hospitalList, "filterHospitals").slice(0, 3)
+                            : get(hospitalList, "filterHospitals")
+                          ).map((hospital: any) => (
+                            <Col
+                              key={hospital.id}
+                              className={styles["hospital-card-style"]}
+                              span={8}
+                            >
+                              <div className={styles["tag-style"]}>
+                                <Image src="../../static/images/icons/star.svg" alt="" width={12}
+                                  height={11.4} />
+                                <div className={styles["rating"]}>
+                                  {hospital.rating}
+                                </div>
                               </div>
-                            </div>
-                            <div className={styles["img-card"]}>
-                              <Image
-                                src={hospital?.logo_url?.url}
-                                className={styles["sm"]}
-                                alt=""
-                                width={100}
-              height={150}
-                              />
-                            </div>
-                            <div className={styles["text-section"]}>
-                              <h4
-                                className={"title4"}
-                                onClick={() =>
-                                  goToHospital(get(hospital, "slug"))
-                                }
-                              >
-                                {hospital.name}
-                              </h4>
-                              <div className={styles["description"]}>
-                                {hospital.description}
+                              <div className={styles["img-card"]}>
+                                <Image
+                                  src={hospital?.logo_url?.url}
+                                  className={styles["sm"]}
+                                  alt=""
+                                  width={100}
+                                  height={150}
+                                />
                               </div>
-                              <div className={styles["certified"]}>
-                                <Image src="../../static/images/icons/speciality.svg" alt=""  width={16}
-              height={24}/>
-                                <span className="specs">
-                                  {" "}
-                                  {get(hospital, "specialisations", [])
-                                    .map((s: any) => s.name)
-                                    .join(", ")}
-                                </span>
-                              </div>
-                            </div>
-
-                            <div className={styles["card-footer"]}>
-                              <div
-                                className={
-                                  styles["item"] + " " + styles["clickable"]
-                                }
-                                onClick={() =>
-                                  goToHospital(get(hospital, "slug"))
-                                }
-                              >
-                                <Image src="../../static/images/icons/info.svg" alt="" width={15}
-              height={15}/>{" "}
-                                More Info
-                              </div>
-                              <div className={styles["item"]}>
-                                <a
-                                  className={styles["theme-color"]}
-                                  href={`tel:+${get(
-                                    hospital,
-                                    "contact_code"
-                                  )}${get(hospital, "contact_number")}`}
+                              <div className={styles["text-section"]}>
+                                <h4
+                                  className={"title4"}
+                                  onClick={() =>
+                                    goToHospital(get(hospital, "slug"))
+                                  }
                                 >
-                                  <Image src="../../static/images/icons/phone.svg" alt="" width={15}
-              height={15}/>{" "}
-                                  <span> Make a Call</span>
-                                </a>
+                                  {hospital.name}
+                                </h4>
+                                <div className={styles["description"]}>
+                                  {hospital.description}
+                                </div>
+                                <div className={styles["certified"]}>
+                                  <Image src="../../static/images/icons/speciality.svg" alt="" width={16}
+                                    height={24} />
+                                  <span className="specs">
+                                    {" "}
+                                    {get(hospital, "specialisations", [])
+                                      .map((s: any) => s.name)
+                                      .join(", ")}
+                                  </span>
+                                </div>
                               </div>
-                            </div>
-                          </Col>
-                        ))}
-                      </Row>
-                    </>
-                  ) : (
-                    <Empty description="No hospitals found" />
-                  )}
-                </div>
-              )}
+
+                              <div className={styles["card-footer"]}>
+                                <div
+                                  className={
+                                    styles["item"] + " " + styles["clickable"]
+                                  }
+                                  onClick={() =>
+                                    goToHospital(get(hospital, "slug"))
+                                  }
+                                >
+                                  <Image src="../../static/images/icons/info.svg" alt="" width={15}
+                                    height={15} />{" "}
+                                  More Info
+                                </div>
+                                <div className={styles["item"]}>
+                                  <a
+                                    className={styles["theme-color"]}
+                                    href={`tel:+${get(
+                                      hospital,
+                                      "contact_code"
+                                    )}${get(hospital, "contact_number")}`}
+                                  >
+                                    <Image src="../../static/images/icons/phone.svg" alt="" width={15}
+                                      height={15} />{" "}
+                                    <span> Make a Call</span>
+                                  </a>
+                                </div>
+                              </div>
+                            </Col>
+                          ))}
+                        </Row>
+                      </>
+                    ) : (
+                      <Empty description="No hospitals found" />
+                    )}
+                  </div>
+                )}
 
               {(map(selectedPractices, "id").includes("d") ||
                 selectedPractices?.length == 0) && (
-                <DoctorsList
-                  doctors={get(doctorsList, "filterDoctors")}
-                  title="Doctors"
-                  specialisations={specialisations}
-                  currentPage={currentPage}
-                  setCurrentPage={setCurrentPage}
-                />
-              )}
+                  <DoctorsList
+                    doctors={get(doctorsList, "filterDoctors")}
+                    title="Doctors"
+                    specialisations={specialisations}
+                    currentPage={currentPage}
+                    setCurrentPage={setCurrentPage}
+                  />
+                )}
             </div>
           </Col>
         </Row>

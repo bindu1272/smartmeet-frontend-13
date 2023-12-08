@@ -17,20 +17,22 @@ export default function ReviewBox(props) {
   const { id, type } = props;
   const [reviews, setReviews] = useState([]);
   const [loading, setLoading] = useState(false);
-  const {data} = useSession();
+  const { data } = useSession();
   const session = data;
 
-  // useEffect(async () => {
-  //   setLoading(true);
-
-  //   let result = await authorizeGetRequest(
-  //     axiosInstance,
-  //     get(session, 'user'),
-  //     `${type}/${id}/reviews`
-  //   );
-  //   setReviews(get(result, 'data.data.data'));
-  //   setLoading(false);
-  // }, []);
+  useEffect(() => {
+    setLoading(true);
+    const getReviews = async () => {
+      let result = await authorizeGetRequest(
+        axiosInstance,
+        get(session, 'user'),
+        `${type}/${id}/reviews`
+      );
+      setReviews(get(result, 'data.data.data'));
+      setLoading(false);
+    }
+    getReviews()
+  }, []);
 
   return (
     <Spin spinning={loading}>
@@ -38,14 +40,14 @@ export default function ReviewBox(props) {
         {reviews.length > 0 ? (
           <>
             {' '}
-            {map(reviews, (data,index) => (
+            {map(reviews, (data, index) => (
               <Card className={styles["card-review"]} key={index}>
                 <Row>
                   <Col xs={24} xl={16}>
                     <div className={styles["head-sec"]}>
                       <div className={styles["img-circle"]}>
                         <Image src={get(data, 'user.image.url')} alt="" width={10}
-          height={10}/>
+                          height={10} />
                       </div>
 
                       <div className={styles["text-sec"]}>
@@ -63,7 +65,7 @@ export default function ReviewBox(props) {
                     <RatingBox
                       ratingValue={get(data, 'rating', 0)}
                       edit={false}
-                      // onChange={props.onChange}
+                    // onChange={props.onChange}
                     />
                   </Col>
                 </Row>

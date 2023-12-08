@@ -20,16 +20,19 @@ export default function FaqBlock(props) {
   const { hospital } = props; // boolean value to check if FaqBlock is for hospital info or doctor info
   const [faqs, setFaqs] = useState([]);
   const [loading, setLoading] = useState(false);
-  useEffect(async () => {
+  useEffect(() => {
     setLoading(true);
-    var result;
-    if (hospital) {
-      result = await axiosInstance.get(`hospitals/${hospitalId}/faqs`);
-    } else {
-      result = await axiosInstance.get(`doctors/${doctorId}/faqs`);
+    const getFaqs = async()=>{
+      let result
+      if (hospital) {
+        result = await axiosInstance.get(`hospitals/${hospitalId}/faqs`);
+      } else {
+        result = await axiosInstance.get(`doctors/${doctorId}/faqs`);
+      }
+      setLoading(false);
+      setFaqs(get(result, 'data.data'));
     }
-    setLoading(false);
-    setFaqs(get(result, 'data.data'));
+    getFaqs()
   }, []);
 
   return (

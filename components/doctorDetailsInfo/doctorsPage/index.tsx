@@ -1,4 +1,5 @@
 "use client";
+import React from 'react';
 import { Tabs, Row, Col, Card, Tag } from 'antd';
 import get from 'lodash/get';
 import map from 'lodash/map';
@@ -25,7 +26,6 @@ function callback(key: any) {
 import styles from "../../../app/hospital/[uuid]/doctor/[doctorId]/styles.module.scss"
 import { axiosInstance } from '@/remote/axios';
 import Link from 'next/link';
-import React from 'react';
 // import { useEffect, useState } from 'react';
 
 export default function DoctorPage({ doctor, props, doctorAvailability, hospital }: any) {
@@ -108,13 +108,17 @@ export default function DoctorPage({ doctor, props, doctorAvailability, hospital
                 <div className={styles["address-text"]}>
                   {getDoctorAddress(get(doctor, 'doctor_detail'))}
                 </div>
-                <Link href="`http://maps.google.co.in/maps?q=${getDoctorAddress(
+                <ButtonDefault
+                    title="Get Direction"
+                    onClick={() => {
+                      window.open(
+                        `http://maps.google.co.in/maps?q=${getDoctorAddress(
                           get(doctor, 'doctor_detail')
-                        )}`">
-                  <a target="_blank" rel="noopener noreferrer">
-                    <ButtonDefault
-                    />  </a>
-                </Link>
+                        )}`,
+                        '_blank'
+                      );
+                    }}
+                  />
               </div>
               <div className={styles["availability-section"]}>
                 <div className={styles["title3"]}>Availability</div>
