@@ -2,6 +2,7 @@ import Hospital from "@/app/hospital/[uuid]/page";
 import LayoutContainer from "@/components/layoutContainer";
 import { axiosInstance } from "@/remote/axios";
 import get from "lodash/get";
+import React from "react";
 
 
 

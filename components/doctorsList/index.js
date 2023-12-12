@@ -56,9 +56,10 @@ export default function DoctorsList(props) {
   const router = useRouter();
 
   const goDoctorInfo = ({ doctor, hospital }) => {
-    router.push(
-      `/hospital/${get(hospital, 'slug')}/doctor/${get(doctor, 'id')}`
-    );
+    window.location.href = window.location.origin+`/hospital/${get(hospital, 'slug')}/doctor/${get(doctor, 'id')}`
+    // router.push(
+      
+    // );
   };
 
   const goToHospital = (id) => {
