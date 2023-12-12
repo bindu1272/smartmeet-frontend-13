@@ -6,7 +6,7 @@ import {
   getHospitals,
   getDoctorAvailability,
 } from "@/utilities/ApiHelper";
-import DoctorPage from "@/components/doctorDetailsInfo/doctorsPage/index";
+import DoctorPage from "../../../../../components/doctorDetailsInfo/doctorsPage/index";
 
 const { TabPane } = Tabs;
 
