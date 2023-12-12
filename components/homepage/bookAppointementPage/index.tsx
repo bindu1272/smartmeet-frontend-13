@@ -14,7 +14,6 @@ import filterArr from "lodash/filter";
 import { getUrl } from "@/utilities/helpers";
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
 import Image from "next/image";
-import React from "react";
 
 const { Option } = Select;
 
