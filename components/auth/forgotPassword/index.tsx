@@ -70,9 +70,9 @@ export default function ForgotPassword(props: any) {
             </div>
 
             <div className={styles["mt--30"]}>
-              <Link href={`/login?callbackUrl=${window.location.origin}`}>
+              {/* <Link href={`/login?callbackUrl=${window.location.origin}`}> */}
                 <ButtonPrimary title="Login" />
-              </Link>
+              {/* </Link> */}
             </div>
           </div>
 

@@ -30,7 +30,14 @@ axiosInstance.interceptors.response.use(
         description: 'Please Check Your Internet Connection',
       });
     } else {
-      console.log("err",err);
+      // console.log("err",err);
+      // if (err.response.status === 400) {
+      //   notification['error']({
+      //     message: 'Bad Request',
+      //     description: get(err, 'response.data.message', 'The request could not be understood by the server.'),
+      //   });
+      // }
+      
       // notification['error']({
       //   message: get(err, 'response.data.message', 'Something Went Wrong'),
       // });
