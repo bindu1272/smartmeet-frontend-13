@@ -170,7 +170,7 @@ export default function BookConsultationSlot(props) {
   const completeModalStep = () => {
     setModalFormStep((cur) => cur + 1);
   };
-  console.log("hello",doctor,hospital,appointmentModal)
+  // console.log("hello",doctor,hospital,appointmentModal)
   return (
     <Spin spinning={loading}>
       <div className={styles["book-consultation-slot"]}>
