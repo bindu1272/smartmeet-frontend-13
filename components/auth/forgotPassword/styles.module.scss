@@ -9,6 +9,27 @@
     padding: 20px 0;
     font-size: 16px;
   }
+  .form-section {
+    padding: 50px 150px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+
+    @include desktop-lg {
+      padding: 90px 200px 50px;
+    }
+    @include mobile-tablet-p{
+      padding:50px 75px 50px; ;
+    }
+  }
+  .logo {
+    margin-bottom: 40px;
+
+    img {
+      width: 160px;
+    }
+  }
 
   .forgot-link {
     display: flex;
@@ -16,10 +37,10 @@
     justify-content: space-between;
     margin-top: 20px;
 
-    .ant-checkbox-wrapper {
+    :global(.ant-checkbox-wrapper) {
       margin-bottom: 0;
 
-      .ant-checkbox {
+      :global(.ant-checkbox) {
         top: 0;
       }
     }
@@ -29,5 +50,22 @@
     font-weight: 500;
     font-size: 16px;
     margin-top: 10px;
+  }
+
+  .form-col {
+    min-height: 100vh;
+  }
+
+  .button-login-section {
+    display: flex;
+    //align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    margin: 32px 0;
+  }
+  .link{
+    color: #532eb3;
+    cursor: pointer;
   }
 }

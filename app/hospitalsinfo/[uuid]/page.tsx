@@ -8,7 +8,7 @@ import MeetDoctors from "@/components/hospitalHomepage/meetDoctors";
 import LatestNews from "@/components/hospitalHomepage/latestNews";
 import ContactDetails from "@/components/hospitalHomepage/contactDetails";
 import get from "lodash/get";
-import {useEffect} from "react";
+import React,{useEffect} from "react";
 
 // styles
 import styles from "./styles.module.scss";

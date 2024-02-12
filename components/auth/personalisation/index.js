@@ -65,7 +65,9 @@ export default function Personalisation(props) {
         <Row align="bottom" justify="space-between" className={hospitalStyles["logo"]}>
           <Col>
             <div>
-              {/* <img src="../../static/images/logo/logo.svg" /> */}
+              <img src="../../static/images/logo/logo.svg" 
+               width={160}
+               height={24.55}/>
             </div>
           </Col>
           <Col className={hospitalStyles["back-link"]} onClick={props.onClickBack}>

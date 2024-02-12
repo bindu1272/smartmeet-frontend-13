@@ -175,6 +175,10 @@ export default function BookConsultation(props) {
   const [fileUrl, setFileUrl] = useState("");
   const [deleteFileUrl, setDeleteFileUrl] = useState("");
   const handleChangeFile = (info, questionId) => {
+    if(info?.fileList?.length == 0){
+      setFileUrl(null)
+      return;
+    }
     if (info?.file?.status === "uploading") {
       setLoading(true);
       return;
@@ -262,7 +266,8 @@ export default function BookConsultation(props) {
   const onUploadFileDone = (fileResponse) => {
     setFileUser(fileResponse);
   };
-  const handleRemove = () => {
+  const handleRemove = (event) => {
+    event?.preventDefault();
     setImageUrl(null);
   };
   return (

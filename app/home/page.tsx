@@ -1,3 +1,4 @@
+import React from "react";
 // import BookAppointement from "@/components/homepage/bookAppointement";
 import HowWorks from "@/components/homepage/howWorks";
 import OurPartnerships from "@/components/homepage/ourPartnerships";

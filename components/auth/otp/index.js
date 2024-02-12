@@ -58,8 +58,8 @@ export default function Otp(props) {
       <div className={hospitalStyles["form-section"]}>
         <div>
           <div className={hospitalStyles["logo"]}>
-            <Image src="../../static/images/logo/logo.svg" alt="" width={10}
-              height={10} />
+            <Image src="../../static/images/logo/logo.svg" alt="" width={200}
+              height={140} />
           </div>
           <h3 className={hospitalStyles["title3"]}>Please verify your email</h3>
           <div className={hospitalStyles["info"]}>
@@ -69,9 +69,10 @@ export default function Otp(props) {
           <div className={styles["otp-box"]}>
             {/* <Form.Item validateStatus={!props.errors.otp ? "validating" : "error"} help={props.errors.otp}> */}
             <OtpInput
-              value={'123'}
+              value={data?.otp}
               onChange={(value) => onChangeOtp('otp', value)}
-              numInputs={6}
+              numInputs={4}
+              // separator={<span>-</span>}
               renderInput={(props) => <input {...props} />}
             />
             {/* </Form.Item> */}

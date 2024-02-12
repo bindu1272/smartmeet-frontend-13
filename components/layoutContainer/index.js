@@ -12,7 +12,6 @@ import authOptions from "../../lib/authOptions"
 
 const LayoutContainer = async (props) => {
   const session = await getServerSession(authOptions);
-  console.log("session**", session);
   return (
     <>
       <Layout
@@ -29,7 +28,7 @@ const LayoutContainer = async (props) => {
             />
           ) : (
             <MenuUser
-              user={get(session, "user")}
+              user={session?.user && get(session, "user")}
               searchShow={props?.searchShow}
               onSearch={props?.onSearch}
             />

@@ -28,8 +28,9 @@ export default function ContactHours(props) {
         <Row align="bottom" justify="space-between" className={hospitalStyles["logo"]}>
           <Col>
             <div>
-              <Image src="../../static/images/logo/logo.svg" alt="" width={10}
-          height={10}/>
+              <Image src="../../static/images/logo/logo.svg" alt="" 
+                width={160}
+                height={24.55}/>
             </div>
           </Col>
           <Col className={hospitalStyles["back-link"]} onClick={props.onClickBack}>

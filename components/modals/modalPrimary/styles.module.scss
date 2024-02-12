@@ -7,6 +7,10 @@
     border: none;
     border-radius: 0;
   }
+  :global(.ant-modal-close-x){
+    width: 25px;
+    height: 18px;
+  }
 
   :global(.ant-modal-content) {
     padding: 30px 50px;

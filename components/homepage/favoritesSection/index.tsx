@@ -1,4 +1,5 @@
 "use client";
+import React from "react";
 import { Row, Col } from "antd";
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -13,7 +14,6 @@ import Image from "next/image";
 
 // Styles
 import styles from "./styles.module.scss";
-import React from "react";
 const backendUrl = process.env.NEXT_PUBLIC_API_URL;
 
 console.log("backendUrl", backendUrl);
@@ -202,12 +202,16 @@ export default function FavoritesSection() {
                   <Col xs={24} xl={4} key={index}>
                     <div className={styles["card-body"] + " " + styles[data?.cardStyle]}>
                       <div className={styles["img-card"]} onClick={() => clickAppointment(data)}>
-                        <Image alt="" layout="fill"
-                          src={data?.doctor?.image?.url}
-                          className={styles["icon-image"] + " " + styles[data?.style]}
-                        />
+                        {
+                          data?.doctor?.image?.url ?
+                          <Image alt="" layout="fill"
+                            src={data?.doctor?.image?.url}
+                            className={styles["icon-image"] + " " + styles[data?.style]}
+                          />
+                          : null
+                        }
                       </div>
-                      {finalFilterDoctors.includes(data?.uuid) ?
+                      {finalFilterDoctors?.includes(data?.uuid) ?
                         <HeartFilled
                           className={styles["favourite"]}
                           onClick={() => onClickDoctorFavorite(data, finalFilterDoctors.includes(data?.uuid) ? false : true)}

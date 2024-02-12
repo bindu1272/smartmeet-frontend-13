@@ -32,8 +32,8 @@ export default function OtpPatient(props) {
         >
           <div>
             <div className={HospitalRegistrationStyles["logo"]}>
-              <Image src="../../static/images/logo/logo.svg" alt="" width={10}
-                height={10} />
+              <Image src="../../static/images/logo/logo.svg" alt="" width={36}
+                height={30}  />
             </div>
             <h3 className="title3">Please verify your email</h3>
             <div className={HospitalRegistrationStyles["info"]}>
@@ -59,6 +59,8 @@ export default function OtpPatient(props) {
                   onChange={(value) => setOtp(value)}
                   // numInputs={4}
                   inputCount={4}
+              renderInput={(props) => <input {...props} />}
+
                 // separator={<span>-</span>}
                 />
               </div>

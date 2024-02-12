@@ -13,8 +13,8 @@ export default function SuccessContent(props) {
         </button>
       )}
       <div className={styles["verify-successfully"]}>
-        <Image src="../../../static/images/icons/verify.svg" alt="" width={10}
-          height={10}/>
+        <Image src="../../../static/images/icons/verify.svg" alt="" width={200}
+          height={200}/>
         <div className={styles["modal-gradient-title"]}>{props.title}</div>
       </div>
     </div>

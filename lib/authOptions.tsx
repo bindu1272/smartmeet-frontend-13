@@ -97,12 +97,12 @@ const authOptions: AuthOptions = {
       },
       session: async ({ session, token, user }: any) => {
         console.log("********1", session, user, token);
-        session.user = token.user;
+        session.user = token?.user;
         return Promise.resolve({
           ...session,
           user: {
-            ...session.user,
-            id: session.user.id,
+            ...session?.user,
+            id: session?.user?.id || token?.user?.id,
           },
         });
       },

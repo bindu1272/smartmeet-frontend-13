@@ -1,4 +1,5 @@
 "use client";
+import React from "react";
 import { useState } from "react";
 import InputCustom from "../../inputCustom";
 import ButtonPrimary from "../../buttons/buttonPrimary";
@@ -6,6 +7,7 @@ import { useRouter } from "next/navigation";
 import styles from "./styles.module.scss";
 import { axiosInstance } from "@/remote/axios";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function ForgotPassword(props: any) {
   const [value, setValue] = useState(1);
@@ -42,8 +44,7 @@ export default function ForgotPassword(props: any) {
     >
       <div className={styles["form-section"]}>
         <div className={styles["logo"]}>
-          <Image src="../../static/images/logo/logo.svg" alt="" width={10}
-          height={10}/>
+          <Image src="../../static/images/logo/logo.svg" alt="" width={160} height={40}/>
         </div>
         <div className={styles["head-section"]}>
           <h3 className={styles["title3"]}>Forgot Password?</h3>
@@ -59,23 +60,28 @@ export default function ForgotPassword(props: any) {
             required
             onChange={onChange}
           />
+          <div className={styles["button-login-section"]}>
+            <div className={styles["mt--30"]}>
+              <ButtonPrimary
+                title="Recover Password"
+                style={{ backgroundColor: "#34C981" }}
+                onClick={recoverPassword}
+              />
+            </div>
 
-          <div className={styles["mt--30"]}>
-            <ButtonPrimary
-              title="Recover Password"
-              style={{ backgroundColor: "#34C981" }}
-              onClick={recoverPassword}
-            />
-          </div>
-
-          <div className={styles["mt--30"]}>
-            <ButtonPrimary title="Login" onClick={props?.clickHandler} />
+            <div className={styles["mt--30"]}>
+              <Link href={`/login?callbackUrl=${window.location.origin}`}>
+                <ButtonPrimary title="Login" />
+              </Link>
+            </div>
           </div>
 
           <div className={styles["link-section"]}>
             Don’t have an account?{" "}
-            <div className={styles["link"]} onClick={props?.signupHandler}>
-              Signup
+            <div className={styles["link"]}>
+              <Link href="/patientRegistration">
+                Signup
+              </Link>
             </div>
           </div>
         </div>

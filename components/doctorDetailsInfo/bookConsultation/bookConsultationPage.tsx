@@ -1,4 +1,5 @@
 "use client";
+import React from "react";
 import { useState, useEffect } from "react";
 import assign from "lodash/assign";
 import get from "lodash/get";
@@ -14,6 +15,7 @@ import {
   Select,
   Checkbox,
   Upload,
+  message
 } from "antd";
 import axios from "axios";
 import ContactCodeSelector from "../../contactCodeSelector";
@@ -63,25 +65,44 @@ export default function BookConsultationPage({
   onAppointmentCreated,
   initialValues,
 }: any) {
+  function beforeUpload(file) {
+    const isJpgOrPng = file.type === 'image/jpeg' || file.type === 'image/png';
+    if (!isJpgOrPng) {
+      message.error('You can only upload JPG/PNG file!');
+    }
+    const isLt2M = file.size / 1024 / 1024 < 2;
+    if (!isLt2M) {
+      message.error('Image must smaller than 2MB!');
+    }
+    return isJpgOrPng && isLt2M;
+  }
+  function beforeUploadFile(file) {
+    const isLt2M = file.size / 1024 / 1024 < 5;
+    if (!isLt2M) {
+      message.error('Image must smaller than 5MB!');
+    }
+    return isLt2M;
+  }
+  
   return (
     <Spin spinning={loading}>
       <Form
         name="appointment"
         layout="vertical"
         onFinish={onFinish}
-        initialValues={initialValues}
+        // initialValues={initialValues}
         onFinishFailed={onFinishFailed}
-        // initialValues={
-        //   get(session, "user")
-        //     ? {
-        //         email: get(session, "user.email"),
-        //         contact_number: get(session, "user.contact_number"),
-        //         contact_code: get(session, "user.contact_code"),
-        //         name: get(session, "user.name"),
-        //         title: get(session, "user.title"),
-        //       }
-        //     : {}
-        // }
+        initialValues={
+          get(session, "user")
+            ? {
+                email: get(session, "user.email"),
+                contact_number: get(session, "user.contact_number"),
+                contact_code: get(session, "user.contact_code"),
+                name: get(session, "user.name"),
+                title: get(session, "user.title"),
+              }
+            : {}
+        }
       >
         <div className={styles["book-consultation-style"]}>
           <div className={styles["modal-title"]}>Book Consultation</div>
@@ -298,7 +319,7 @@ export default function BookConsultationPage({
                                   action={`${backendUrl}/contactus/pdf`}
                                   className={styles["avatar-uploader"]}
                                   showUploadList={true}
-                                  // beforeUpload={beforeUpload}
+                                  beforeUpload={beforeUploadFile}
                                   onChange={(event) =>
                                     handleChangeFile(
                                       event,
@@ -306,19 +327,7 @@ export default function BookConsultationPage({
                                     )
                                   }
                                 >
-                                  {fileUrl ? (
-                                    <video
-                                      src={fileUrl}
-                                      // alt="avatar"
-                                      style={{ width: "100%" }}
-                                      onChange={() =>
-                                        fileOnchange(
-                                          hospitalQuestion?.question?.id,
-                                          event
-                                        )
-                                      }
-                                    />
-                                  ) : (
+                                  {!fileUrl && (
                                     uploadButton
                                   )}
                                 </Upload>
@@ -339,11 +348,12 @@ export default function BookConsultationPage({
                               <>
                                 <Upload
                                   name="file"
+                                  accept=".png,.jpg"
                                   action={`${backendUrl}/contactus/image`}
                                   listType="picture-card"
                                   className={styles["avatar-uploader"]}
                                   showUploadList={false}
-                                  // beforeUpload={beforeUpload}
+                                  beforeUpload={beforeUpload}
                                   onChange={(event) =>
                                     handleChangeImage(
                                       event,
@@ -355,7 +365,7 @@ export default function BookConsultationPage({
                                     hospitalQuestion?.question?.id
                                   ] ? (
                                     <div style={{ position: "relative" }}>
-                                      <Image  width={10} height={10}
+                                      <Image  width={100} height={100}
                                         src={
                                           imageUrl?.[
                                             hospitalQuestion?.question?.id

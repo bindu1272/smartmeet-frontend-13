@@ -1,4 +1,5 @@
 "use client";
+import React, { useRef } from "react";
 import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 import ButtonOutline from "@/components/buttons/buttonOutline";
@@ -32,6 +33,7 @@ export default function ProfileDetails(props:any) {
   const [profile, setProfile] = useState();
   const { data: session } :any= useSession();
   const [loading, setLoading] = useState(false);
+  const intialRender = useRef(true);
   // const session = JSON.parse(sessionStorage.getItem('user'));
 
   const onViewUserProfile = () => {
@@ -145,8 +147,11 @@ export default function ProfileDetails(props:any) {
         .then((res) => {
           let defaultValue = session?.user?.is_default_login;
           defaultValue = false;
+          if(intialRender.current){
+            message.success("Please fill the profile details");
+            intialRender.current=false;
+          }
         });
-      message.success("Please fill the profile details");
     }
   }
   }, [session?.user?.id]);
@@ -250,17 +255,21 @@ export default function ProfileDetails(props:any) {
             </Col>
           </Row>
         </div>
-        <Drawer
-          title="Medical Document"
-          placement="right"
-          closable={true}
-          onClose={toggleMedical}
-          open={get(medicalDocument, "visible")}
-          className="appointment-drawer"
-          destroyOnClose={true}
-        >
-          <MedicalHistory isAllMedicalHistory={true} />
-        </Drawer>
+        {
+          get(medicalDocument, "visible") ?
+            <Drawer
+              title="Medical Document"
+              placement="right"
+              closable={true}
+              onClose={toggleMedical}
+              open={get(medicalDocument, "visible")}
+              className="appointment-drawer"
+              destroyOnClose={true}
+            >
+              <MedicalHistory isAllMedicalHistory={true} />
+            </Drawer>
+          : null
+        }
       </div>
   );
 }

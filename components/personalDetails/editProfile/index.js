@@ -10,6 +10,7 @@ import {
   Input,
   DatePicker,
 } from "antd";
+import dayjs from 'dayjs';
 import ButtonPrimary from "../../../components/buttons/buttonPrimary";
 import InputCustom from "../../../components/inputCustom";
 // import usePlacesService from "react-google-autocomplete/lib/usePlacesAutocompleteService";
@@ -29,6 +30,8 @@ import { useSession } from "next-auth/react";
 import ContactCodeSelector from "../../contactCodeSelector";
 import moment from "moment";
 import { useRouter } from "next/navigation";
+import customParseFormat from 'dayjs/plugin/customParseFormat';
+dayjs.extend(customParseFormat);
 
 export default function EditProfile({ onClick, data, getProfileDetails }) {
   const router = useRouter();
@@ -50,6 +53,7 @@ export default function EditProfile({ onClick, data, getProfileDetails }) {
   console.log("data", data?.user);
 
   const [value, setValue] = useState(1);
+  const [dob, setDob] = useState(dayjs(moment(get(data, "user.dob"), "YYYY-MM-DD HH:mm:ss").format("YYYY-MM-DD"), "YYYY-MM-DD"));
   const [selectedLocation, setSelectedLocation] = useState(
     data?.user ? data?.user?.address_details?.address_1?.selectedAddress : ""
   );
@@ -106,7 +110,7 @@ export default function EditProfile({ onClick, data, getProfileDetails }) {
         address_1: address_1,
         address_2: address_2,
       },
-      dob: moment(get(values, "dob")).format("YYYY-MM-DD"),
+      dob: dob.format("YYYY-MM-DD"),
     };
 
     omit(payload, [
@@ -141,9 +145,10 @@ export default function EditProfile({ onClick, data, getProfileDetails }) {
   };
   const [form] = Form.useForm();
 
-  let defaultDatePickerValue = get(data, "user.dob", moment())
-    ? moment(get(data, "user.dob", moment()), "YYYY-MM-DD HH:mm:ss")
-    : "";
+  // let defaultDatePickerValue = get(data, "user.dob", moment())
+  //   ? moment(get(data, "user.dob", moment()), "YYYY-MM-DD HH:mm:ss")
+  //   : "";
+
   const onSuccessAddress_2 = (value) => {
     form.setFieldsValue({ address_2: value?.formatted_address });
   };
@@ -570,9 +575,12 @@ export default function EditProfile({ onClick, data, getProfileDetails }) {
                       ]}
                     >
                       <DatePicker
+                        onChange={(value)=>{
+                          setDob(value);
+                        }}
                         className={styles["custom-date"]}
                         size={"large"}
-                        defaultValue={defaultDatePickerValue}
+                        defaultValue={dob}
                       />
                     </Form.Item>
                   </div>

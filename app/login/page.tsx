@@ -15,7 +15,7 @@ import {
 } from "antd";
 import styles from "./styles.module.scss";
 import Link from "next/link";
-import {LOGIN_TYPES} from "@/constants/logintypes";
+import {LOGIN_TYPES} from "../../constants/logintypes";
 import Image from "next/image";
 
 export default function SignIn() {
@@ -31,14 +31,15 @@ export default function SignIn() {
         redirect: false,
         email: values?.email,
         password: values?.password,
-        callbackUrl: "http://localhost:3002",
+        callbackUrl: callbackUrl,
       });
       console.log(res);
       if (!res?.error) {
         router.refresh();
-        router.push(callbackUrl);
+        router.push("/");
       } else {
-        notification.error({ message: res?.error });
+        notification.error({ message: res?.error, style:
+           {boxShadow: "unset", height: "70px"}}),
         console.log("invalid email or password");
       }
     } catch (errr) {

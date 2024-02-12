@@ -59,7 +59,7 @@
   }
 
   .checkbox-inner-style,
-  .ant-radio-group {
+  :global(.ant-radio-group) {
     display: flex;
     flex-direction: column;
   }

@@ -3,7 +3,12 @@
 @import '../../../styles/variables/mixins';
 
 //Page Container
-
+.back-link {
+  cursor: pointer;
+  font-weight: 600;
+  line-height: normal;
+  color: #532EB3;;
+}
 // Login Container
 .auth-container {
   height: 100vh;

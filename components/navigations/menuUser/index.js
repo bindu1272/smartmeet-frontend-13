@@ -70,11 +70,11 @@ export default function MenuUser(props) {
       </button>
 
       <div className={styles["flex-style"]}>
-        {props.searchShow && (
+        {props?.searchShow && (
           <div className={styles["search-sec"]}>
             <Search
               placeholder="Doctor, specialty, hospital or treatment"
-              onSearch={props.onSearch}
+              onSearch={props?.onSearch}
             />
           </div>
         )}

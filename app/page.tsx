@@ -1,3 +1,4 @@
+import React from "react";
 import LayoutContainer from "@/components/layoutContainer";
 import HowWorks from "@/components/homepage/howWorks";
 import OurPartnerships from "@/components/homepage/ourPartnerships";

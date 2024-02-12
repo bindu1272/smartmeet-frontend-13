@@ -5,6 +5,12 @@
 //Page Container
 
 // Login Container
+.back-link {
+  cursor: pointer;
+  font-weight: 600;
+  line-height: normal;
+  color: #532EB3;;
+}
 .auth-container {
   height: 100vh;
   overflow-x: hidden;
@@ -40,12 +46,6 @@
 
     img {
       width: 160px;
-    }
-    .back-link {
-      cursor: pointer;
-      font-weight: 600;
-      line-height: normal;
-      color: $gray-a7;
     }
   }
 

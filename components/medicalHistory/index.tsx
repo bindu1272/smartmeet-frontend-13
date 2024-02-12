@@ -1,4 +1,5 @@
 "use client";
+import React from 'react';
 import { Input, Collapse, Select } from 'antd';
 import { AudioOutlined } from '@ant-design/icons';
 import styles from './styles.module.scss';
@@ -230,6 +231,7 @@ export default function MedicalHistory({ data, isAllMedicalHistory }:any) {
                     placeholder="Search by Doctor or Date of appointment"
                     onSearch={onSearch}
                   />
+                      {/* <Search placeholder="Search by Doctor or Date of appointment" allowClear onSearch={onSearch} style={{ width: 200 }} /> */}
                 </div>
               </div>
               <div className={styles["member-filter"]}>

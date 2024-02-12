@@ -45,8 +45,9 @@
       top: 4px;
       margin-left: 5px;
       background: none;
-
-      .ant-btn {
+      z-index: 9999;
+      
+      :global(.ant-btn) {
         background: none;
         border: none;
       }

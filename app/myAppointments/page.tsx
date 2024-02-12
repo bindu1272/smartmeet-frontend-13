@@ -43,8 +43,8 @@ export default function MyAppointments({
     appointmentResult: [],
     pagination: null,
   });
-  const [members, setMembers] = useState<any>([]);
-  const [memberFilter, setMemberFilter] = useState("");
+  const [members, setMembers] = useState<any>([{ name: "All", id: null }]);
+  const [memberFilter, setMemberFilter] = useState("All");
   const [filter, setFilter] = useState({
     page: 1,
     status: null,
@@ -181,6 +181,8 @@ export default function MyAppointments({
     member_uuid:any = null,
     name: any = null
   ) => {
+    setMemberFilter(member_uuid);
+    setFilter({ page, status });
     let url = `/patients/appointments?limit=10&page=${page}`;
     if (status) {
       url = url.concat(`&status=${status}`);
@@ -213,8 +215,6 @@ export default function MyAppointments({
         pagination: get(result, "data.data.meta.pagination"),
       });
     }
-    setFilter({ page, status });
-    setMemberFilter(member_uuid);
   };
 
 
@@ -536,6 +536,7 @@ export default function MyAppointments({
                 className={styles["button-outline"]}
               />
               <ButtonPrimary
+              style={{marginTop : "12px"}}
                 title="Done"
                 htmlType="submit"
                 className={styles["button-primary"]}

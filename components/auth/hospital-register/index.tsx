@@ -1,4 +1,5 @@
 "use client";
+import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Row, Col, notification, message } from "antd";
 import Register from "@/components/auth/register";
@@ -12,7 +13,6 @@ import Image from "next/image";
 // styles
 import styles from "./styles.module.scss";
 import ContactHours from "@/components/auth/contactHours";
-import React, { useState } from "react";
 import Validator from "validatorjs";
 import { get } from "lodash";
 import { axiosInstance } from "@/remote/axios";

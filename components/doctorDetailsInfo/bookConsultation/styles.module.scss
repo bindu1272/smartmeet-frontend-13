@@ -2,6 +2,18 @@
 @import "../../../styles/variables/colors";
 @import "../../../styles/variables/mixins";
 
+.book-consultation-style{
+  :global(.ant-radio){
+    top: 4px;
+    align-self: unset;
+  }
+  :global(.ant-checkbox) {
+    top: 0;
+  }
+}
+.avatar-uploader{
+  cursor: pointer;
+}
 .book-consultation-slot {
   background-color: $white;
   border-radius: 6px;

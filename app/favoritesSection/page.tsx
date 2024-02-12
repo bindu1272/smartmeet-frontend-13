@@ -273,14 +273,15 @@ export default function FavoritesSection() {
             </Col>
             <Col xs={24} xl={20}>
               <Row gutter={20} className={styles["slider-row"]}>
-                {doctorsData?.map((data: any, index: any) => (
+                {doctorsData?.map((data: any, index: any) => 
+                (
                   <Col xs={24} xl={4} key={index}>
                     <div className={styles["card-body"] + " " + styles[data?.cardStyle]}>
                       <div className={styles["img-card"]} onClick={() => clickAppointment(data)}>
                         {
-                          data?.doctor?.thumbnail?.thumbnail_url ?
+                          data?.doctor?.image?.url ?
                             <Image alt="" layout="fill"
-                              src={data?.doctor?.thumbnail?.thumbnail_url}
+                              src={data?.doctor?.image?.url}
                               className={styles["icon-image"] + " " + styles[data?.style]}
                             />
                             : null

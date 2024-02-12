@@ -8,7 +8,7 @@
 }
 .custom-input {
   margin-top: 10px;
-  .ant-input-wrapper .ant-input-group {
+  :global(.ant-input-wrapper .ant-input-group) {
     height: 45px;
     input {
       height: 45px;

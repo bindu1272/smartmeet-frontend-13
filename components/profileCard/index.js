@@ -37,11 +37,11 @@ export default function ProfileCard(props) {
   console.log("props",userDetails);
 
   return (
-    <div className={styles["profile-card"]+" "+ props.className}>
+    <div className={styles["profile-card"]+" "+ props?.className}>
       <div className={styles["user-photo-circle"]}>
         {/* <img src={props?.user?.thumbnail?.thumbnail_url} className={styles["logo"]} /> */}
         {/* <img src={props?.user?.image?.url} className={styles["logo"]} /> */}
-        <Image src={userDetails?.image?.url} className={styles["logo"]} alt="" layout='fill'/>
+       {userDetails?.image?.url ? <Image src={userDetails?.image?.url} className={styles["logo"]} alt="logo" layout='fill'/> :null}
 
       
       </div>

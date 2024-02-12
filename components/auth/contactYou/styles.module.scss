@@ -13,7 +13,7 @@
 // input-multiple
 .input-multiple {
   margin-top: 20px;
-  .ant-input {
+  :global(.ant-input) {
     height: 40px;
   }
   .label {
@@ -33,7 +33,7 @@
 // select-custom
 .select-custom {
   margin-top: 20px;
-  .ant-select .ant-select-selector {
+  :global(.ant-select .ant-select-selector) {
     height: 40px;
     align-items: center;
   }
@@ -42,7 +42,7 @@
     color: $theme-dark;
     font-size: 16px;
   }
-  .ant-select-multiple .ant-select-selection-item {
+  :global(.ant-select-multiple .ant-select-selection-item) {
     background: rgba($theme-primary, 0.1);
   }
 }
@@ -51,11 +51,11 @@
 .input-number-custom {
   margin-top: 20px;
 
-  .ant-input-number {
+  :global(.ant-input-number) {
     width: 100%;
   }
 
-  .ant-input-number .ant-input-number-input {
+  :global(.ant-input-number .ant-input-number-input) {
     height: 40px;
   }
   .label {
@@ -87,10 +87,10 @@
     color: $theme-dark;
     font-size: 16px;
   }
-  .ant-checkbox-inner {
+  :global(.ant-checkbox-inner) {
     border-radius: 2px;
   }
-  .ant-checkbox-wrapper {
+  :global(.ant-checkbox-wrapper) {
     font-size: 16px;
   }
 }

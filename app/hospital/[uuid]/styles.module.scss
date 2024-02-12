@@ -9,6 +9,7 @@
 .doctors-appointment {
   padding: 50px 80px;
   background-color: $bodyColor;
+  margin-right: 74px;
 
   @include mobile {
     padding: 20px;

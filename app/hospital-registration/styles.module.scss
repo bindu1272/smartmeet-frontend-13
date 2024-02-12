@@ -10,13 +10,18 @@
   overflow-x: hidden;
   overflow-y: hidden;
 
+  .row-container{
+    display: flex;
+    justify-content: space-between;
+  }
+  
   .head-section {
     margin-bottom: 30px;
   }
 
   .form-col {
     height: 100vh;
-    overflow-y: scroll;
+    // overflow-y: scroll;
   }
 
   .form-section {

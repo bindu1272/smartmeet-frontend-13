@@ -70,6 +70,7 @@ export default function VerifyEmail(props) {
                 value={otp}
                 onChange={(value) => setOtp(value)}
                 numInputs={4}
+                renderInput={(props) => <input {...props} />}
                 // separator={<span>-</span>}
               />
             </div>

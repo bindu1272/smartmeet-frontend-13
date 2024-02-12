@@ -23,28 +23,25 @@ function callback(key: any) {
   console.log(key);
 }
 
-export default  function HospitalPage({
-  hospital,
-  doctors,
-}: any) {
+export default function HospitalPage({ hospital, doctors }: any) {
   const [ads, setAds] = useState<any>([]);
   const [notifications, setNotifications] = useState<any>([]);
   const [loading, setLoading] = useState(false);
   const [adModal, setAdModal] = useState<any>(null);
-  
+
   useEffect(() => {
-    
     const fetchData = async () => {
       setLoading(true);
       const hospitalId = get(hospital, "id");
       var result;
-      result = hospitalId && await axiosInstance.get(`hospitals/${hospitalId}/ads`);
+      result =
+        hospitalId && (await axiosInstance.get(`hospitals/${hospitalId}/ads`));
       setLoading(false);
       setAds(get(result, "data.data"));
-  
-      var notifications =  hospitalId && await axiosInstance.get(
-        `hospitals/${hospitalId}/notifications`
-      );
+
+      var notifications =
+        hospitalId &&
+        (await axiosInstance.get(`hospitals/${hospitalId}/notifications`));
       setNotifications(get(notifications, "data.data"));
     };
 
@@ -57,9 +54,8 @@ export default  function HospitalPage({
     setAdModal(null);
   };
 
-
-// console.log("hospital",hospital,doctors,ads);
-console.log("admoda",adModal);
+  // console.log("hospital",hospital,doctors,ads);
+  console.log("admoda", adModal);
   return (
     <div className={styles["doctor-ads"]}>
       <div className={styles["doctors-appointment"]}>
@@ -92,7 +88,7 @@ console.log("admoda",adModal);
           <Tabs defaultActiveKey="1" onChange={callback}>
             <TabPane tab="Doctors" key="1">
               <DoctorsList
-                doctors={doctors?.map((doctor: any,index:any) => {
+                doctors={doctors?.map((doctor: any, index: any) => {
                   return { doctor, hospital };
                 })}
               />
@@ -106,15 +102,18 @@ console.log("admoda",adModal);
           </Tabs>
         </div>
       </div>
-      <div>
-        { ads?.length>0 && ads?.map((ad: any,index:any) => {
-          return (
-            <div key={index}>
-              <div>
-                {ad?.video?.key ? (
-                  <div onClick={() => clickAd(ad)}>
-                    <h3>{ad?.text}</h3>
-                    {/* <Media>
+      <div
+        style={{ paddingLeft: "50px", paddingTop: "40px", marginLeft: "-24px" }}
+      >
+        {ads?.length > 0 &&
+          ads?.map((ad: any, index: any) => {
+            return (
+              <div key={index}>
+                <div>
+                  {ad?.video?.key ? (
+                    <div onClick={() => clickAd(ad)}>
+                      <h3>{ad?.text}</h3>
+                      {/* <Media>
                       <div
                         className={styles["media"]}
                         style={{ cursor: "pointer" }}
@@ -128,36 +127,51 @@ console.log("admoda",adModal);
                         </div>
                       </div>
                     </Media> */}
-                    <Image alt=""
-                      src={ad?.image?.url}
-                      style={{ width: "100px", height: "70px" }}
-                      width={100}
-          height={70}
-                    />
-                  </div>
-                ) : (
-                  <div>
-                    <h3>{ad?.text} </h3>
-                    <Image alt=""
-                      src={ad?.image?.url}
-                      style={{ width: "100px", height: "70px" }}
-                      width={100}
-          height={70}
-                    />
-                  </div>
-                )}
-              </div>
-              {adModal && (
-                // <openVideo adModal={adModal} closeAdModal={closeAdModal} ad={ad}/>
-                <Modal
-                open={adModal === ad?.uuid}
-                // visible={adModal }
-                onCancel={closeAdModal}
-                footer={null}
-              >
-                <h1>{ad?.text}
-                </h1>
-                {/* <Media>
+                      {ad?.video?.url && (
+                        <div style={{ width: "500px" }}>
+                          <video
+                            className={styles["media"]}
+                            controls
+                            loop
+                            autoPlay
+                            style={{ cursor: "pointer", width: "100%" }}
+                          >
+                            <source src={ad?.video?.url} type="video/mp4" />
+                            Your browser does not support the video tag.
+                          </video>
+                        </div>
+                      )}
+                      <Image
+                        alt=""
+                        src={ad?.image?.url}
+                        style={{ width: "100px", height: "70px" }}
+                        width={100}
+                        height={70}
+                      />
+                    </div>
+                  ) : (
+                    <div>
+                      <h3>{ad?.text} </h3>
+                      <Image
+                        alt=""
+                        src={ad?.image?.url}
+                        style={{ width: "100px", height: "70px" }}
+                        width={100}
+                        height={70}
+                      />
+                    </div>
+                  )}
+                </div>
+                {adModal && (
+                  // <openVideo adModal={adModal} closeAdModal={closeAdModal} ad={ad}/>
+                  <Modal
+                    open={adModal === ad?.uuid}
+                    // visible={adModal }
+                    onCancel={closeAdModal}
+                    footer={null}
+                  >
+                    <h1>{ad?.text}</h1>
+                    {/* <Media>
                   <div className={styles["media"]} style={{ cursor: "pointer",width:"700px" }}>
                     <div className={styles["media-player"]}>
                       <Player src={ad?.video?.url} loop={true} autoPlay={true} />
@@ -168,34 +182,58 @@ console.log("admoda",adModal);
                     </div>
                   </div>
                 </Media> */}
-                <Image src={ad?.image?.url} alt="ad Image" className={styles["ad-image"]} style={{width:"200px",height:"200px",marginTop:"12px"}} width={200}
-          height={200}/>
-              </Modal>
-              )}
-            </div>
-          );
-        })}
-        <div style={{ cursor: "pointer" }}>
-          { notifications?.length > 0 && notifications?.map((notification: any,index:any) => {
-            return (
-              <div key={index}>
-                <h1>{notification?.text}</h1>
-                {
-                  notification?.image?.url ? 
-                  <Image 
-                  width={100}
-                  height={70}
-                    src={notification?.image?.url}
-                    alt="ad Image"
-                    style={{ width: "100px", height: "70px" }}
-                  />
-                  :
-                  null
-                }
-               
+                    {ad?.video?.url && (
+                      <div
+                        className={styles["media"]}
+                        style={{ cursor: "pointer", width: "470px" }}
+                      >
+                        <video
+                          className={styles["media"]}
+                          controls
+                          loop
+                          autoPlay
+                          style={{ cursor: "pointer", width: "100%" }}
+                        >
+                          <source src={ad?.video?.url} type="video/mp4" />
+                          Your browser does not support the video tag.
+                        </video>
+                      </div>
+                    )}
+                    <Image
+                      src={ad?.image?.url}
+                      alt="ad Image"
+                      className={styles["ad-image"]}
+                      style={{
+                        width: "200px",
+                        height: "200px",
+                        marginTop: "12px",
+                      }}
+                      width={200}
+                      height={200}
+                    />
+                  </Modal>
+                )}
               </div>
             );
           })}
+        <div style={{ cursor: "pointer" }}>
+          {notifications?.length > 0 &&
+            notifications?.map((notification: any, index: any) => {
+              return (
+                <div key={index}>
+                  <h1>{notification?.text}</h1>
+                  {notification?.image?.url ? (
+                    <Image
+                      width={100}
+                      height={70}
+                      src={notification?.image?.url}
+                      alt="ad Image"
+                      style={{ width: "100px", height: "70px" }}
+                    />
+                  ) : null}
+                </div>
+              );
+            })}
         </div>
       </div>
     </div>

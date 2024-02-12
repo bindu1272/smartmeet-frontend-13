@@ -29,7 +29,8 @@ const SingleFileUpload = (props) => {
       setLoading(false);
     }
   };
-  const handleRemove = () => {
+  const handleRemove = (event) => {
+    event?.preventDefault();
     setImageUser(null);
   };
   return (

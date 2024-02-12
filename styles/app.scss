@@ -134,14 +134,14 @@ body {
 
 // checkbox Style
 .checkbox-inner-style {
-  .ant-checkbox-wrapper {
+  :global(.ant-checkbox-wrapper) {
     margin-bottom: 20px;
     margin-left: 0;
     display: flex;
     align-items: center;
   }
 
-  .ant-checkbox-inner {
+  :global(.ant-checkbox-inner) {
     width: 22px;
     height: 22px;
     background: $gray-light;
@@ -149,31 +149,31 @@ body {
     border: none;
   }
 
-  .ant-checkbox-checked {
-    .ant-checkbox-inner {
+  :global(.ant-checkbox-checked) {
+    :global(.ant-checkbox-inner) {
       background-color: $theme-primary;
     }
   }
-  .ant-checkbox {
+  :global(.ant-checkbox) {
     position: relative;
-    top: 2px;
+    top: unset;
     margin-right: 7px;
   }
 }
 
-.ant-checkbox-inner {
+:global(.ant-checkbox-inner) {
   &::after{
     transform: rotate(45deg) scale(1) translate(-30%, -70%) !important;
   }
 }
 
 // Radio Style
-.ant-radio-group {
-  .ant-radio-wrapper {
+:global(.ant-radio-group) {
+  :global(.ant-radio-wrapper) {
     // margin-bottom: 20px;
   }
 
-  .ant-radio-inner {
+  :global(.ant-radio-inner) {
     width: 22px;
     height: 22px;
     background: $gray-light;

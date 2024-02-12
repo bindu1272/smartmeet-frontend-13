@@ -57,6 +57,10 @@
 
   .item-col {
     margin-bottom: 20px;
+    :global(.ant-radio){
+      top: unset;
+      align-self: unset;
+    }
   }
 
   .label {

@@ -42,22 +42,23 @@ export default function ContectCard({ notes, attachments, handleDownload }) {
         {attachments.length > 0 && (
           <>
             <div className={styles["attachment"]}>
-              <Image alt="" width={10}
-          height={10}
+              <Image alt="" width={15} height={15}
                 src="../../../static/images/icons/attachment.svg"
-                className={styles["icon-style"]+" "+styles["mr--10"]}
+                className={styles["icon-style"]+" " +"mr--10"}
               />{' '}
               Attachment
             </div>
             {map(attachments, (singleAttachment) => (
-              <div className={styles["upload"]+" "+styles["mt--20"]}>
+              <div className={styles["upload"]+" "+"mt--20"}>
                 <div className={styles["title-info"]}>
                   {get(singleAttachment, 'title')}
                 </div>
                 <br />
-                {map(get(singleAttachment, 'images'), (image) => (
-                  <Image src={get(image, 'image')} width={120} height={10} alt=""/>
-                ))}
+                <div style={{marginBottom: "8px"}}>
+                  {map(get(singleAttachment, 'images'), (image) => (
+                    <Image src={get(image, 'image_url')} width={120} height={100} alt="" style={{marginRight:"8px"}}/>
+                  ))}
+                  </div>
               </div>
             ))}
           </>
