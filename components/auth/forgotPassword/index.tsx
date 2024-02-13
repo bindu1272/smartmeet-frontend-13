@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import InputCustom from "../../inputCustom";
 import ButtonPrimary from "../../buttons/buttonPrimary";
@@ -13,6 +13,7 @@ export default function ForgotPassword(props: any) {
   const [value, setValue] = useState(1);
   const [loading, setLoading] = useState(false);
   const router = useRouter();
+  const [originUrl,setOriginUrl] = useState("");
 
   const onChange = (e: any) => {
     setValue(e);
@@ -36,6 +37,11 @@ export default function ForgotPassword(props: any) {
         setLoading(false);
       });
   };
+  useEffect(()=>{
+    if (typeof window !== 'undefined') {
+      setOriginUrl(window.location.origin);
+   }
+  },[])
 
   return (
     <div
@@ -70,9 +76,9 @@ export default function ForgotPassword(props: any) {
             </div>
 
             <div className={styles["mt--30"]}>
-              {/* <Link href={`/login?callbackUrl=${window.location.origin}`}> */}
+              <Link href={`/login?callbackUrl=${originUrl}`}>
                 <ButtonPrimary title="Login" />
-              {/* </Link> */}
+              </Link>
             </div>
           </div>
 
