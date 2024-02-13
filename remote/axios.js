@@ -24,13 +24,13 @@ axiosInstance.interceptors.response.use(
     return response;
   },
   (err) => {
-    if (!err.response) {
+    if (!err?.response) {
       notification['error']({
         message: 'Something Went Wrong',
         description: 'Please Check Your Internet Connection',
       });
     } else {
-      // console.log("err",err);
+      console.log("err",err);
       // if (err.response.status === 400) {
       //   notification['error']({
       //     message: 'Bad Request',
